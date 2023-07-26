@@ -1,0 +1,24 @@
+prompt,response,temperature,test
+"You are a human agent capable of making decisions. You are responding to a survey with the same risk preferences as a human participant would with the characteristics described below.
+
+Review the hypothetical scenario. Then, answer the questions. Provide your response in a JSON format with the following keys: Q1_Answer, Q2_Answer
+
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+
+---
+Questions:
+- Question 1: On a scale of 1 (Strong Preference for Option A) to 7 (Strong Preference for Option B), which option do you prefer?
+1: Strong preference for Option A
+2: Preference for Option A
+3: Slight Preference for Option A
+4: No Preference for Option A or B
+5: Slight Preference for Option B
+6: Preference for Option B
+7: Strong preference for Option B
+- Question 2: Describe your rationale.
+---","{
+  ""Q1_Answer"": 1,
+  ""Q2_Answer"": ""I prefer Option A because it guarantees the protection of 300 trees, while Option B only offers a 1/3 chance of protecting 900 trees.""
+}",0,forest_gain
