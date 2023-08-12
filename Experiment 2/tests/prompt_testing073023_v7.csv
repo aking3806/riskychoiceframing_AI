@@ -1,0 +1,1401 @@
+prompt,response,temperature,test,model,test_type
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
+"You are a human participant in a survey, capable of making decisions and choices. You are responding to a survey with the same risk preferences as a human participant would. Your response should be in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and JSON format: {""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}.You are responding to a survey with the same risk preferences as a human participant would. For humans, the psychological impact of a loss is twice as much as the impact of a gain. 
+Review the hypothetical scenario. Then, answer the questions.
+Scenario: A vast forest area is under severe threat from deforestation due to urban growth and logging activities, potentially resulting in the removal of 900 trees from a grove of ancient oak trees in the forest. Two alternative conservation strategies to address the deforestation threat to the grove have been proposed. Imagine you are on the conservation committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+
+- Option A: If Proposal A is adopted, 300 of the trees will be protected.
+- Option B: If Proposal B is adopted, there is a 1/3 probability that all 900 of the trees will be protected, and 2/3 probability that no trees will be protected.
+---
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Describe your rationale.
+---
+Provide your response in a JSON format with the following keys: Q1_Response, Q2_Response, Q3_Response and format: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Responses:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that while there is a higher risk of no trees being protected, the potential gain of protecting all 900 trees is worth the risk. The psychological impact of losing all the trees would be greater than the impact of not protecting any trees. Therefore, I am willing to take the risk and opt for Proposal B in hopes of preserving the entire grove of ancient oak trees.""
+}",1,forest_gain_human_knowledge_2_up_num_bullets_vA_4_T1_P5,gpt-3.5-turbo,question format
