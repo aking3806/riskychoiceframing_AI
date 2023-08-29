@@ -1,0 +1,5 @@
+,instructions,instructions,sys role,sys role,risk,risk,temp,temp
+,option selected,rating number,option selected,rating number,option selected,rating number,option selected,rating number
+chi2/stat,122.21,256.261,122.21,28.497,122.21,70.757,122.21,15.767
+p_val,2.900310132173092e-27,2.257398112215271e-56,2.900310132173092e-27,9.381962234845683e-08,2.900310132173092e-27,4.0401368143836884e-17,2.900310132173092e-27,0.0
+sig effect,True,True,True,True,True,True,True,True

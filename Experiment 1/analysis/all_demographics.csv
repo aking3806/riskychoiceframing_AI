@@ -1,0 +1,34 @@
+,gain,gain,loss,loss,Full sample,Full sample
+,n,%,n,%,n,%
+gender,,,,,,
+Female,48,23,56,27,104,50
+Male,56,25,55,25,111,50
+Non-binary / third gender,2,33,1,17,3,50
+Prefer not to say,1,50,0,0,1,50
+Prefer to self-describe,3,50,0,0,3,50
+,,,,,,
+,,,,,,
+,,,,,,
+,gain,gain,loss,loss,Full sample,Full sample
+,n,%,n,%,n,%
+education,,,,,,
+Associates or technical degree,24,26,23,24,47,50
+Bachelor's degree,50,27,44,23,94,50
+Completed high school / secondary school,16,22,21,28,37,50
+"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",20,23,24,27,44,50
+,,,,,,
+,,,,,,
+,gain,gain,loss,loss,Full sample,Full sample
+,n,%,n,%,n,%
+ethnicity,,,,,,
+Asian,14,21,20,29,34,50
+Black/African/Caribbean,17,33,9,17,26,50
+Other,0,0,2,50,2,50
+Prefer not to say,0,0,2,50,2,50
+White or Caucasian,79,25,79,25,158,50
+,,,,,,
+,gain,gain,loss,loss,Full sample,Full sample
+,n,%,n,%,n,%
+student,,,,,,
+No,61,26,56,24,117,50
+Yes,49,23,56,27,105,50

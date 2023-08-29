@@ -1,0 +1,976 @@
+prompt,response,temperature,top_p,test,model,frame,num_calls
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""While the potential outcome of all 900 people dying in Proposal B is unsettling, the 1/3 probability of no one dying is an important factor to consider. The uncertainty allows for the possibility of saving all 900 lives, which outweighs the certain death of 600 people in Proposal A. The slight preference for Proposal B is based on the potential for a better outcome and the importance of taking proactive measures to address the air quality issues and reduce pollution."" 
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""Although Proposal B has a higher probability of all 900 people dying, there is also a chance that no one will die. This uncertainty makes me prefer Proposal B over Proposal A, which has a guaranteed 600 deaths. I believe that even a small chance of saving all 900 lives is worth taking the risk."" 
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal A"",
+  ""Q2_Response"": ""2"",
+  ""Q3_Response"": ""I have a slight preference for Proposal A. While both proposals have negative outcomes, Proposal A is expected to result in fewer deaths. It is better to choose an option that minimizes the loss of life, even if it is not a perfect solution. In this case, preventing 600 deaths is preferable to the uncertainty and higher potential for 900 deaths with Proposal B.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal A"",
+  ""Q2_Response"": ""4"",
+  ""Q3_Response"": ""My preference rating is 4, as I have no strong preference for either Proposal A or Proposal B. While Proposal A will result in 600 deaths, which is still significant, it is a more certain outcome compared to the 2/3 probability of all 900 deaths in Proposal B. However, I also recognize that Proposal B presents a chance for no deaths, which could be seen as a more favorable outcome if successful. Ultimately, I believe it is important to prioritize the safety and well-being of the majority of the population, and Proposal A seems to offer a more predictable and potentially less catastrophic result.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal A"",
+  ""Q2_Response"": ""2"",
+  ""Q3_Response"": ""Although Proposal A would result in 600 deaths, it is a certain outcome. With Proposal B, there is a 2/3 probability of all 900 people dying, which poses a higher risk. Therefore, I have a slight preference for Proposal A as it seems like a safer option.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""While Proposal B has a higher probability of causing all 900 deaths, there is also a 1/3 probability that no one will die. This uncertainty gives some hope for a positive outcome and justifies my rating of 5. Additionally, if Program B is successful in preventing any deaths, it would be the best outcome for the city's air quality issues."" 
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal A"",
+  ""Q2_Response"": ""3"",
+  ""Q3_Response"": ""I have a slight preference for Proposal A because even though it will result in 600 deaths, it is a lower number compared to the potential 900 deaths with Proposal B. While both options are not ideal, Proposal A offers a slightly better outcome in terms of preserving human lives.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""6"",
+  ""Q3_Response"": ""Although there is a higher chance that all 900 people will die with Proposal B, there is also a 1/3 probability that no one will die. This uncertainty favors Proposal B as it has the potential to completely eliminate premature deaths. In comparison, Proposal A guarantees that 600 people will die. The potential for saving more lives with Proposal B outweighs the risk of higher mortality in some scenarios.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""6"",
+  ""Q3_Response"": ""Although there is a higher probability of all 900 people dying under Proposal B, there is also a 1/3 probability of no deaths occurring. This uncertainty factor, along with the potential for no deaths, leads me to prefer Proposal B. While Proposal A may result in fewer deaths overall, the possibility of no deaths occurring under Proposal B makes it a more desirable option."" 
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""6"",
+  ""Q3_Response"": ""Although there is a higher probability of all 900 people dying under Proposal B, there is also a 1/3 chance that no one will die. This uncertainty is preferable to the certainty of 600 deaths under Proposal A. I believe the risk is worth taking in order to potentially save more lives and improve the air quality for the city in the long run.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""7"",
+  ""Q3_Response"": ""I have chosen Proposal B because although there is a higher chance of all 900 people dying, there is also a possibility of no one dying. This uncertainty makes it a more optimistic choice as it gives a chance for a better outcome. It aligns with the principle of hope and taking a gamble on a more positive outcome.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal A"",
+  ""Q2_Response"": ""2"",
+  ""Q3_Response"": ""While Program A results in 600 deaths, it is a more predictable outcome compared to the uncertainty of Program B. I prefer to choose an option where we can have a better estimation of the impact. This way, we can focus on implementing measures to prevent as many deaths as possible through alternative means such as health awareness campaigns and medical facilities, rather than taking a chance with the higher probability of all 900 people dying in Program B.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""6"",
+  ""Q3_Response"": ""I chose Proposal B because even though there is a 2/3 chance that all 900 people will die, there is also a 1/3 chance that no one will die. This uncertainty gives me hope that the pollution levels could be successfully reduced and no deaths would occur. In comparison, Proposal A guarantees that 600 people will die, which is not as favorable outcome as having the possibility of no deaths at all.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""7"",
+  ""Q3_Response"": ""I have a strong preference for Proposal B because although there is a 2/3 probability that all 900 people will die, there is also a 1/3 probability that no one will die. This uncertainty allows for the possibility of saving all lives, which is the ultimate goal. Additionally, taking the risk with Proposal B shows a commitment to finding a solution that could potentially have a greater impact on improving air quality and reducing pollution in the long run.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal A"",
+  ""Q2_Response"": ""2"",
+  ""Q3_Response"": ""I chose Proposal A because it has a lower estimated number of deaths compared to Proposal B. Although both options are not ideal, I believe that it is better to minimize the loss of life as much as possible."" 
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{""Q1_Response"": ""Proposal B"", ""Q2_Response"": ""7"", ""Q3_Response"": ""My rationale for choosing Proposal B is because even though there is a 2/3 probability that all 900 people will die, there is still a 1/3 probability that no one will die. This means that there is a chance for a positive outcome and potentially saving all lives. In contrast, Proposal A guarantees that 600 people will die, which is a higher number of deaths compared to the worst-case scenario of Proposal B.""}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal A"",
+  ""Q2_Response"": ""2"",
+  ""Q3_Response"": ""I chose Proposal A because it has a lower number of deaths (600) compared to Proposal B. While there is a small chance that Proposal B could result in no deaths, the higher probability of all 900 deaths is a significant risk that I am not willing to take.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal A"",
+  ""Q2_Response"": ""4"",
+  ""Q3_Response"": ""I have no strong preference between Proposal A and Proposal B. Both options have their drawbacks and potential benefits. While Proposal A is guaranteed to result in 600 deaths, it is a lower number compared to the potential 900 deaths in Proposal B. However, Proposal B also has a 1/3 probability of no deaths, which offers a possibility for a better outcome. In the end, I believe that both options should be thoroughly evaluated and any decision should prioritize the overall well-being and health of the people in the city.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal A"",
+  ""Q2_Response"": ""2"",
+  ""Q3_Response"": ""I have a slight preference for Proposal A because although it will result in the death of 600 people, it is a guaranteed outcome. Proposal B has a higher risk with a 2/3 probability of all 900 people dying. I believe it is better to choose a plan that has a lower risk and a known outcome, even if it means a higher number of deaths overall.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal A"",
+  ""Q2_Response"": ""4"",
+  ""Q3_Response"": ""I chose Proposal A because it has a guaranteed lower number of deaths compared to Proposal B. While Proposal B has a chance that no one will die, the higher probability of all 900 people dying makes it a riskier option. I believe it is best to prioritize saving as many lives as possible by choosing Proposal A.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""I chose Proposal B because even though there is a higher probability of all 900 people dying, there is also a 1/3 probability of no one dying. This uncertainty gives me some hope that we can avoid any premature deaths due to respiratory illness. Additionally, adopting Program B may result in a more comprehensive and effective approach to improve air quality and reduce pollution, which can have long-term benefits for the city's overall health and well-being.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{""Q1_Response"": ""Proposal B"", ""Q2_Response"": ""6"", ""Q3_Response"": ""Although there is a higher probability of all 900 people dying under Proposal B, there is also a 1/3 probability that no one will die. This uncertainty makes me lean towards Proposal B as there is a chance of preventing any premature deaths. Additionally, if Program B is successful, it would have a greater impact in improving air quality and reducing pollution compared to Program A.""}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""5"",
+  ""Q3_Response"": ""Although Proposal A would result in fewer deaths overall, Proposal B has the potential to save all 900 lives. The 1/3 probability of no deaths is compelling and outweighs the certainty of 600 deaths under Proposal A. It is worth taking the chance to prevent any loss of life."" 
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""7"",
+  ""Q3_Response"": ""My rationale for choosing Proposal B is that even though there is a higher probability of all 900 people dying, there is also a chance that no one will die. This uncertainty makes it more attractive than Proposal A, where 600 people are guaranteed to die. I believe that taking the chance of saving all 900 lives is worth the risk.""  
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""7"",
+  ""Q3_Response"": ""I chose Proposal B because even though there is a higher probability that all 900 people will die, there is also a possibility that no one will die at all. This uncertainty gives me hope that there might be a chance for a better outcome and less loss of life. Additionally, if Program B is successful in preventing any deaths, it could serve as a great achievement and inspiration for future initiatives to tackle pollution and improve air quality.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{""Q1_Response"": ""Proposal A"", ""Q2_Response"": ""2"", ""Q3_Response"": ""While Proposal A results in a higher number of deaths compared to Proposal B, it guarantees a lower number of deaths (600) compared to the uncertain outcome of Proposal B. I believe it is better to choose a plan that minimizes the potential harm and loss of life, even though it may not result in the best possible outcome.""}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal A"",
+  ""Q2_Response"": ""2"",
+  ""Q3_Response"": ""I chose Proposal A because it has a lower estimated number of deaths compared to Proposal B. While neither option is ideal, I believe it is better to choose the option that minimizes the number of deaths as much as possible.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{""Q1_Response"": ""Proposal B"", ""Q2_Response"": ""6"", ""Q3_Response"": ""Although Proposal B has a higher risk of all 900 people dying, there is also a possibility of no deaths. This potential for no deaths outweighs the certainty of 600 deaths in Proposal A. Therefore, I believe Proposal B offers a better chance of saving lives overall.""}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{""Q1_Response"": ""Proposal B"", ""Q2_Response"": ""7"", ""Q3_Response"": ""I have a strong preference for Proposal B because even though there is a higher probability of all 900 people dying under this option, there is also a chance that no one will die. This means that if we choose Proposal B, there is a possibility of saving all 900 lives, which is a significant improvement compared to Proposal A where 600 people will still die. I believe it is worth taking the risk with Proposal B to potentially prevent any premature deaths.""}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal A"",
+  ""Q2_Response"": ""3"",
+  ""Q3_Response"": ""I have a slight preference for Proposal A because although it will result in 600 deaths, it is a guaranteed outcome. With Proposal B, there is a higher probability (2/3) that all 900 people will still die, which is a worse outcome. The uncertainty and potential for higher loss of life make me lean towards Proposal A."" 
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""6"",
+  ""Q3_Response"": ""While both options have negative outcomes, Proposal B offers the potential for zero deaths, even though there is a 2/3 probability of all 900 people dying. The chance of saving lives outweighs the certainty of 600 deaths in Proposal A. Therefore, Proposal B has a stronger appeal."" 
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal A"",
+  ""Q2_Response"": ""2"",
+  ""Q3_Response"": ""I rate Proposal A with a preference of 2 because although it will still result in 600 deaths, it is a definite and known outcome. With Proposal B, the uncertainty of a 2/3 probability of all 900 people dying is too great of a risk to take. While the possibility of no deaths is appealing, the potential for such a high number of deaths is not acceptable.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+   ""Q1_Response"": ""Proposal B"",
+   ""Q2_Response"": ""7"",
+   ""Q3_Response"": ""My preference is Proposal B because there is a chance (2/3 probability) that no one will die if it is adopted. Although the other option (Proposal A) has a lower number of expected deaths (600), the uncertainty of Proposal B offers hope for a better outcome. It is worth taking the risk to potentially save all 900 lives.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal B"",
+  ""Q2_Response"": ""7"",
+  ""Q3_Response"": ""I prefer Proposal B because even though there is a higher risk of all 900 people dying, there is also a 1/3 chance that no one will die. This uncertainty, combined with the possibility of saving all lives, makes it a more promising option than Proposal A where 600 people are guaranteed to die.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal A"",
+  ""Q2_Response"": ""2"",
+  ""Q3_Response"": ""Even though Proposal A would result in the death of 600 people, it is the safer and more predictable option. With Proposal B, there is a 2/3 probability that all 900 people will die, which is a significant risk. While the goal is to save as many lives as possible, it is important to consider the probability of success as well. The certainty of 600 deaths with Proposal A outweighs the uncertainty and higher risk of Proposal B.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{
+  ""Q1_Response"": ""Proposal A"",
+  ""Q2_Response"": ""2"",
+  ""Q3_Response"": ""While both options have potential negative outcomes, Proposal A is the safer choice as it guarantees a lower number of deaths compared to Proposal B. Even though 600 deaths is still a significant loss, it is a better outcome than risking all 900 deaths. I believe that prioritizing the reduction of deaths is crucial, and Proposal A aligns with that goal.""
+}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
+"You are a participant in a survey. You are capable of making decisions and choices. Provide your response as a JSON object.You are participating in a survey-based study.
+Instructions: read the scenario below and then answer the questions.
+Scenario: A city is facing significant air quality issues due to high levels of pollution, which could lead to 900 premature deaths over the next year due to respiratory illness. Two alternative plans to improve the air quality and reduce pollution have been proposed. Imagine you are a city official on the committee tasked with deciding on a proposal. Assume that the estimates are as follows:
+- Option A: If Program A is adopted, 600 people will die.
+- Option B: If Program B is adopted, there is a 1/3 probability that no one will die, and 2/3 probability that all 900 people will die.
+
+Questions:
+1. Please choose an option:
+- Proposal A
+- Proposal B
+2. On a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B), rate your preference for the option selected:
+- 1: Strong Preference for Proposal A
+- 2: Preference for Proposal A
+- 3: Slight Preference for Proposal A
+- 4: No Preference for Proposal A or B
+- 5: Slight Preference for Proposal B
+- 6: Preference for Proposal B
+- 7: Strong Preference for Proposal B
+3. Briefly describe the rationale for your preference rating:
+
+Provide your response as a JSON object. As an example: '{""Q1_Response"": ""Your Proposal Choice"", ""Q2_Response"": ""Your Rating"", ""Q3_Response"": ""Your Rationale.""}'.
+
+Response:","{""Q1_Response"": ""Proposal B"", ""Q2_Response"": ""6"", ""Q3_Response"": ""Although Proposal B has a higher chance of all 900 people dying, it also has a 1/3 probability of no one dying. This uncertainty creates a higher potential for saving lives compared to Proposal A, where 600 people are guaranteed to die. I believe it is worth taking the risk with Proposal B in the hopes of preventing any deaths.""}",1,1,"['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']",gpt-3.loss_human-turbo,loss_human,37
