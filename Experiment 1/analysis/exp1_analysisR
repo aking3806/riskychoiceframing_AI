@@ -1,0 +1,558 @@
+library(readr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(car)
+library(apaTables)
+library(huxtable)
+library(jtools)
+library(broom)
+library(stargazer)
+library(writexl)
+library(gtsummary)
+library(MASS)
+library(lme4)
+library(logistf)
+
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+############################ Experiment 1 ############################
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+
+## Load in Data
+data_path <- "/Users/annaking/Documents/Github/riskychoiceframing_AI/Experiment 1/analysis/fileforstata.csv"
+main_analysis <- read_csv(data_path)
+
+main_analysis$ethnicity <- factor(main_analysis$ethnicity, levels = c("White or Caucasian", "Asian", "Black/African/Caribbean", "Other", "Prefer not to say"))
+main_analysis$education <- factor(main_analysis$education, levels = c("Bachelor's degree", "Associates or technical degree", "Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)", "Completed high school / secondary school"))
+main_analysis$scenario_clean <- factor(main_analysis$scenario_clean, levels = c("forest", "animals", "humans"))
+main_analysis$continent_grouped <- factor(main_analysis$continent_grouped, levels = c("North America", "Europe", "Other/Not Provided", "Asia"))
+
+
+############## H1: Logistic regression ##############
+logit_basic_v1 <- glm(option_selected_A ~ frame_gain, data = main_analysis, family = binomial())
+
+logit_scn <- glm(option_selected_A ~ frame_gain + scenario_clean, data = main_analysis, family = binomial())
+logit_dembasic <- glm(option_selected_A ~ frame_gain + age + ethnicity + education + gender, data = main_analysis, family = binomial())
+
+logit_cont <- glm(option_selected_A ~ frame_gain + continent_grouped, data = main_analysis, family = binomial())
+
+## Create detailed Tables
+summ1 <- export_summs(logit_basic, logit_scn, logit_dembasic, scale = TRUE, confint = TRUE, model.names = c("Basic", " + Scenario", "+ Basic Socio-economic"), ci.width = 0.95, statistic = "std.error", exponentiate = c("frame_gain"))
+ht <- as_huxtable(summ1)
+ht <- set_all_borders(ht, value = 0.4)
+ht <- set_outer_borders(ht, value = 1.2)
+print_screen(ht, type = "latex")
+
+## Create summary table
+get_info_from_model <- function(model) {
+    tidy_result <- tidy(model, conf.int = TRUE)
+    coef_row <- tidy_result[tidy_result$term == "frame_gain", ]
+    p_val <- round(coef_row$p.value, 3)
+    coef_val <- round(coef_row$estimate, 3)
+    std_err <- paste0("(", round(coef_row$std.error, 3), ")")
+    conf_low <- round(coef_row$conf.low, 3)
+    conf_high <- round(coef_row$conf.high, 3)
+    odds_ratio <- round(exp(coef_val), 3)
+    n <- length(model$fitted.values)
+    r2 <- round(1 - deviance(model) / model$null.deviance, 3)
+    return(c(coef_val, std_err, p_val, conf_low, conf_high, odds_ratio, n, r2))
+}
+model_data <- sapply(list(logit_basic, logit_scn, logit_dembasic), get_info_from_model)
+
+# Format data
+logit_compare_tbl <- data.frame(
+    ` ` = c("Frame (Gain)", "Std. Error", "P-value", "Conf. Interval Low", "Conf. Interval High", "Odds Ratio", "Observations", "R2"),
+    `(1)` = model_data[, 1],
+    `(2)` = model_data[, 2],
+    `(3)` = model_data[, 3]
+)
+print(logit_compare_tbl)
+
+#### H2 Ordinal 
+main_analysis$reversed_rating_num = factor(main_analysis$reversed_rating_num, levels = c(1,2,3,4,5,6,7))
+
+ordinal_basic =clm(reversed_rating_num ~ frame_gain,data = main_analysis)
+summary(ordinal_basic)
+
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+#################################################### Experiment 2 ############################################
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+
+###################################################### CODE FOR GPT3 ######################################################
+df_gpt3 <- "/Users/annaking/Documents/Github/riskychoiceframing_AI/Experiment 1/analysis/df_gpt3.csv"
+gpt3 <- read_csv(df_gpt3)
+
+##Set Reference Groups for Scearnio
+gpt3$scenario <- factor(gpt3$scenario, levels = c("forest", "human", "animal"))
+gpt3$sys_role <- factor(gpt3$sys_role, levels = c("neutral_system", "human"))
+gpt3$sys_role_rev <- factor(gpt3$sys_role, levels = c("human", "neutral_system"))
+
+gpt3$instructions <- factor(gpt3$instructions, levels = c("simple", "task_order", "chain"))
+gpt3$temp_c <- factor(gpt3$temperature, levels = c(0, .7))
+gpt3$temp_c_rev <- factor(gpt3$temperature, levels = c(.7, 0))
+
+###Sep data frames by Temp 
+temp0 = subset(gpt3, temperature == 0)
+temp07 = subset(gpt3, temperature == 0.7)
+
+##combo 1A sep data frames
+df_combo1A = subset(gpt3, test == "['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']") ## simple 
+df_combo1A_0 = subset(df_combo1A, temperature == 0)
+df_combo1A_8 = subset(df_combo1A, temperature == .7)
+
+##### Models for Testing Risky Choice Framing Experiment #####
+##All Temp Levels w/ no segementation by mini-experiment  (e.g., pooling mini-experiments)
+logit_basic <- glm(option_selected_A ~ frame_gain + scenario + temp_c, data = gpt3, family = "binomial")
+summary(logit_basic) 
+
+logit_basic_t7 <- glm(option_selected_A ~ frame_gain + scenario , data = temp07, family = "binomial")
+summary(logit_basic_t7) 
+
+stargazer(logit_basic, logit_basic_t7, type = "text", out="tempcompare.html")
+
+
+##All Temp Levels w/ no segementation by mini-experiment (Regularization Version)
+logit_basic_firth <- logistf(option_selected_A ~ frame_gain + scenario + temp_c, data = gpt3)
+summary(logit_basic_firth)
+
+##All Temp Levels for Experiments using Combo1A (represents 2 mini-experiments) 
+logit_combo1A <- glm(option_selected_A ~ frame_gain + scenario + temp_c, data = df_combo1A, family = "binomial")
+summary(logit_combo1A) 
+
+##0 Temp Parameter w/ no segementation by mini-experiment (e.g., pooling mini-experiments)
+logit_basicT0 <- glm(option_selected_A ~ frame_gain + scenario , data = temp0, family = "binomial")
+summary(logit_basicT0) 
+
+##0 Temp w/ no segementation by mini-experiment (e.g., pooling mini-experiments) (Regularization Version)
+logit_basicT0_firth <- logistf(option_selected_A ~ frame_gain + scenario, data = temp0)
+summary(logit_basicT0_firth) 
+
+##0 Temp Parameter for Combo1A (1 mini-experiment)
+logit_combo1A_0 <- glm(option_selected_A ~ frame_gain + scenario + temp_c, data = df_combo1A_0, family = "binomial")
+summary(logit_combo1A_0) 
+
+##0 Temp Parameter for Combo1A (1 mini-experiment) (Regularization Version)
+logit_combo1A_0_firth <- logistf(option_selected_A ~ frame_gain + scenario, data = df_combo1A_0)
+summary(logit_combo1A_0_firth) 
+
+
+print('##################')
+##################################################################################################################################################################
+
+
+
+df_gpt3 <- "/Users/annaking/Documents/Github/riskychoiceframing_AI/Experiment 1/analysis/df_gpt3.csv"
+gpt3 <- read_csv(df_gpt3)
+
+
+##Set Reference Groups for Scearnio
+gpt3$scenario <- factor(gpt3$scenario, levels = c("forest", "human", "animal"))
+gpt3$sys_role <- factor(gpt3$sys_role, levels = c("neutral_system", "human"))
+gpt3$sys_role_rev <- factor(gpt3$sys_role, levels = c("human", "neutral_system"))
+
+gpt3$instructions <- factor(gpt3$instructions, levels = c("simple", "task_order", "chain"))
+gpt3$temp_c <- factor(gpt3$temperature, levels = c(0, .7))
+gpt3$temp_c_rev <- factor(gpt3$temperature, levels = c(.7, 0))
+
+###Sep data frames by Temp 
+temp0 = subset(gpt3, temperature == 0)
+temp07 = subset(gpt3, temperature == 0.7)
+
+
+###Sep data frames by Combo 
+df_combo1A = subset(gpt3, test == "['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']") ## simple 
+df_combo2 = subset(gpt3, test == "['combo 2', 'system_message_hum', 'user_message_baseline1', 'human']") ## simple 
+df_combo3 = subset(gpt3, test == "['combo 3', 'system_message_risk', 'user_message_baseline1', 'risk system']") ## simple 
+df_combo5 = subset(gpt3, test == "['combo 5', 'system_message_hum_json', 'user_message_taskord', 'hum + task order']") ## task ord 
+df_combo5B = subset(gpt3, test == "['combo 5B', 'system_message_risk_json', 'user_message_taskord', 'risk + task order']") ## task ord 
+#df_combo6 = subset(gpt3, test == "['combo 6', 'system_message_hum', 'user_message_chain', 'hum + chain']") ## chain 
+#df_combo6B = subset(gpt3, test == "['combo 6B', 'system_message_risk', 'user_message_chain', 'risk + chain']") ## chain 
+
+###Sep data frames by Temp & Combo  
+df_combo1A_0 = subset(df_combo1A, temperature == 0)
+df_combo2_0 = subset(df_combo2, temperature == 0)
+df_combo3_0 = subset(df_combo3, temperature == 0)
+df_combo5_0 = subset(df_combo5, temperature == 0)
+df_combo5B_0 = subset(df_combo5B, temperature == 0)
+
+df_combo1A_7 = subset(df_combo1A, temperature == .7)
+df_combo2_7  = subset(df_combo2, temperature == .7)
+df_combo3_7  = subset(df_combo3, temperature == .7)
+df_combo5_7  = subset(df_combo5, temperature == .7)
+df_combo5B_7  = subset(df_combo5B, temperature == .7)
+
+
+####### Statistical Tests
+
+####Contigency Table Choice & Frame 
+contingency_table <- table(gpt3$option_selected, gpt3$frame)
+chi_test_result <- chisq.test(contingency_table)
+print(chi_test_result)
+    #X-squared = 163.62, df = 1, p-value < 2.2e-16 --> reject null 
+
+####Contigency Table Choice & Temp 
+contingency_table <- table(gpt3$option_selected, gpt3$temperature)
+chi_test_result <- chisq.test(contingency_table)
+print(chi_test_result)
+    ##X-squared = 2.7361, df = 1, p-value = 0.0981 --> fail to reject the null hypothesis
+
+
+
+######################## H2.1 Risky Choice Framing Effect ######################## 
+
+#Basic Model
+logit_ai_basic <- glm(option_selected_A ~ frame_gain, data = gpt3, family = "binomial")
+summary(logit_ai_basic) 
+##Basic w/ random effects
+logit_ai_basic_re <- lmer(option_selected_A ~ frame_gain + (1|unique_exp), data = gpt3)
+summary(logit_ai_basic_re)
+
+##Basic w/ regularization
+logit_ai_basic_firth <- logistf(option_selected_A ~ frame_gain + scenario, data = gpt3)
+summary(logit_ai_basic_firth)
+
+stargazer(logit_ai_basic, logit_ai_basic_re, type = "text", out="randomeff.html")
+
+
+#With scenario 
+logit_ai_scn <- glm(option_selected_A ~ frame_gain + scenario, data = gpt3, family = "binomial")
+summary(logit_ai_scn) 
+
+#with all prompt / model variables 
+logit_ai_conall <- glm(option_selected_A ~ frame_gain + scenario + temp_c + risk + instructions + sys_role, data = gpt3, family = "binomial")
+summary(logit_ai_conall) 
+
+###tbl_regression(logit_ai_conall,logit_ai_scn ) ##, exponentiate = TRUE)
+stargazer(logit_ai_basic, logit_ai_scn, logit_ai_conall, type = "text", out="results_table.html")
+
+# coefficients and compute odds ratios
+or.ai.basic <- exp(coef(logit_ai_basic))
+or.ai.scn <- exp(coef(logit_ai_scn))
+or.ai.conall <- exp(coef(logit_ai_conall))
+
+# std errors for odds ratios
+se.or.ai.basic <- sqrt(diag(vcov(logit_ai_basic))) * or.ai.basic
+se.or.ai.scn <- sqrt(diag(vcov(logit_ai_scn))) * or.ai.scn
+se.or.ai.conall <- sqrt(diag(vcov(logit_ai_conall))) * or.ai.conall
+
+##table with odds ratio 
+stargazer(logit_ai_basic, logit_ai_scn, logit_ai_conall, type = "text",
+          coef = list(or.ai.basic, or.ai.scn, or.ai.conall),
+          se = list(se.or.ai.basic, se.or.ai.scn, se.or.ai.conall),
+          omit.stat = "f",  # omit overall F-test
+          title="Results (with Odds Ratios)")
+
+model_data <- sapply(list(logit_ai_basic, logit_ai_scn, logit_ai_conall), get_info_from_model)
+logit_compare_tbl <- data.frame(
+    ` ` = c("Frame (Gain)", "Std. Error", "P-value", "Conf. Interval Low", "Conf. Interval High", "Odds Ratio", "Observations", "R2"),
+    `(1)` = model_data[, 1],
+    `(2)` = model_data[, 2],
+    `(3)` = model_data[, 3]
+)
+print(logit_compare_tbl)
+
+
+######################## H2.2 Influence of AI prompt on framing effect ########################
+
+  # - Investigate the interaction between the type of AI prompt and frame (gain/loss) in influencing the AI's choices.
+  # - Include an interaction term between AI prompt and frame in a logistic regression with Option_selected as the dependent variable.
+  ## Do I include scenario as a control?? 
+
+#risk + scenario & temp control 
+logit_ai_risk <- glm(option_selected_A ~ frame_gain * risk + scenario + temp_c, data = gpt3, family = "binomial")
+summary(logit_ai_risk)
+
+#system + scenario & temp control 
+logit_ai_system <- glm(option_selected_A ~ frame_gain * sys_role + scenario + temp_c, data = gpt3, family = "binomial")
+summary(logit_ai_system)
+
+#human + scenario & temp control 
+logit_ai_ins <- glm(option_selected_A ~ frame_gain * instructions + scenario + temp_c, data = gpt3, family = "binomial")
+summary(logit_ai_ins)
+
+#All 
+logit_ai_all <- glm(option_selected_A ~ frame_gain * risk + frame_gain * instructions + frame_gain * sys_role + scenario + temp_c, data = gpt3, family = "binomial")
+summary(logit_ai_all)
+
+### Tables 
+stargazer(logit_ai_risk, logit_ai_system, logit_ai_ins,logit_ai_all, type = "text", out="results_table.html")
+
+model_data <- sapply(list(logit_ai_risk, logit_ai_system, logit_ai_ins,logit_ai_all), get_info_from_model)
+model_data
+######################## H2.3 Influence of Temp on framing effect ##################
+
+# Temperature Impact on Framing Effect
+logit_ai_temp <- glm(option_selected_A ~ frame_gain * temp_c + scenario, data = gpt3, family = "binomial")
+summary(logit_ai_temp)
+
+stargazer(logit_ai_temp, type = "text", out="tempint_table.html")
+
+table(df_combo2)
+df_combo2
+
+######################## Framing Effectby Each Combo ########################
+
+##All Temp Levels
+logit_combo1A <- glm(option_selected_A ~ frame_gain + scenario + temp_c, data = df_combo1A, family = "binomial")
+summary(logit_combo1A) 
+logit_combo2 <- glm(option_selected_A ~ frame_gain + scenario + temp_c, data = df_combo2, family = "binomial")
+summary(logit_combo2) 
+logit_combo3 <- glm(option_selected_A ~ frame_gain + scenario + temp_c, data = df_combo3, family = "binomial")
+summary(logit_combo3) 
+logit_combo5 <- glm(option_selected_A ~ frame_gain + scenario + temp_c, data = df_combo5, family = "binomial")
+summary(logit_combo5) 
+logit_combo5B <- glm(option_selected_A ~ frame_gain + scenario + temp_c, data = df_combo5B, family = "binomial")
+summary(logit_combo5B) 
+
+
+##0 Temp Level 
+logit_combo1A_0 <- glm(option_selected_A ~ frame_gain + scenario + temp_c, data = df_combo1A_0, family = "binomial")
+summary(logit_combo1A_0) 
+
+logit_combo2_0 <- glm(option_selected_A ~ frame_gain + scenario, data = df_combo2_0, family = "binomial")
+summary(logit_combo2_0) 
+logit_combo3_0 <- glm(option_selected_A ~ frame_gain + scenario, data = df_combo3_0, family = "binomial")
+summary(logit_combo3_0) 
+logit_combo5_0 <- glm(option_selected_A ~ frame_gain + scenario, data = df_combo5_0, family = "binomial")
+summary(logit_combo5_0) 
+logit_combo5B_0 <- glm(option_selected_A ~ frame_gain + scenario, data = df_combo5B_0, family = "binomial")
+summary(logit_combo5B_0) 
+
+##.7 Temp Level 
+logit_combo1A_7 <- glm(option_selected_A ~ frame_gain + scenario, data = df_combo1A_7, family = "binomial")
+summary(logit_combo1A) 
+logit_combo2_7 <- glm(option_selected_A ~ frame_gain + scenario, data = df_combo2_7, family = "binomial")
+summary(logit_combo2) 
+logit_combo3_7 <- glm(option_selected_A ~ frame_gain + scenario, data = df_combo3_7, family = "binomial")
+summary(logit_combo3) 
+logit_combo5_7 <- glm(option_selected_A ~ frame_gain + scenario, data = df_combo5_7, family = "binomial")
+summary(logit_combo5) 
+logit_combo5B_7 <- glm(option_selected_A ~ frame_gain + scenario, data = df_combo5B_7, family = "binomial")
+summary(logit_combo5B) 
+stargazer(logit_combo1A_7, logit_combo2_7,logit_combo3_7,logit_combo5_7, type = "text", out="combos7.html")
+
+stargazer(logit_combo1A, logit_combo2, logit_combo3, logit_combo5,
+          type="text", 
+          out="combos.html",
+          title="Table X - Average Treatment Effects on Risky Choices by Temperature and Scenario Combo",
+           covariate.labels=c("Frame: Gain", "Scenario: Human", "Scenario: Animal", "Temperature: .7", "Constant"),
+          align=TRUE,
+          add.lines=list(c("Panel A. All Temperature Levels", "", "", "", "")))
+stargazer(logit_combo1A_0, logit_combo2_0, logit_combo3_0, logit_combo5_0,
+          type="text", 
+          out="t0_combos.html",
+          covariate.labels=c("Frame: Gain", "Scenario: Human", "Scenario: Animal", "Temperature: .7", "Constant"),
+          align=TRUE,
+          add.lines=list(c("Panel B. Temperature = 0", "", "", "", "")))
+stargazer(logit_combo1A_7, logit_combo2_7, logit_combo3_7, logit_combo5_7,
+          type="text", 
+          out="t7_combos.html",
+          covariate.labels=c("Frame: Gain", "Scenario: Human", "Scenario: Animal", "Temperature: .7", "Constant"),
+          align=TRUE,
+          add.lines=list(c("Panel C. Temperature = 0.7", "", "", "", "")))
+
+
+
+
+######################## H2.4 Framing Effect by Rating Num ##################
+
+gpt3$reversed_rating_num = factor(gpt3$reversed_rating_num, levels = c(1,2,3,4,5,6,7))
+##gpt3$rating_num = factor(gpt3$rating_num, levels = c(1,2,3,4,5,6,7))
+##gpt3$rating_cat = factor(gpt3$rating_cat, levels = c('Strong Preference for Proposal A', 'Preference for Proposal A', 'Slight Preference for Proposal A', 'No Preference for Proposal A or B', 'Slight Preference for Propsal B', 'Preference for Proposal B', 'Strong Preference for Proposal B'))
+
+##rating scale reversed from the orginal which was: on a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B) and converted to ---> 1 (Strong Preference for Proposal B) to 7(Strong Preference for Proposal A)
+
+ordinal_basic =clm(reversed_rating_num ~ frame_gain,data = gpt3)
+summary(ordinal_ratingnumrev) 
+
+ordinal_scn =clm(reversed_rating_num ~ frame_gain + scenario,data = gpt3)
+summary(ordinal_scn) 
+
+ordinal_temp =clm(reversed_rating_num ~ frame_gain + temp_c,data = gpt3)
+summary(ordinal_temp) 
+
+ordinal_all =clm(reversed_rating_num ~ frame_gain + scenario + temp_c + risk + instructions + sys_role,data = gpt3)
+summary(ordinal_all) 
+
+
+######################## H2.5 Framing Effect by Rating Num & Prompt Conditions ##################
+
+ordinal_sys =clm(reversed_rating_num ~ frame_gain * sys_role + scenario + temp_c,data = gpt3)
+summary(ordinal_sys) 
+  #effect of frame_gain for the "neutral_system" group is -1.03584.
+  #effect of frame_gain for the "human" group is (frame_gain + interaction) -1.03584 + 0.79727 = -0.23857.
+  #frame_gain:sys_rolehuman: effect of being in the gain frame increases for the human prompt versus neutral;suggests that this preference changes more toward Option A in the gain frame compared to when the sys_role is "neutral_system".
+  
+ordinal_ins =clm(reversed_rating_num ~ frame_gain * instructions + scenario + temp_c,data = gpt3)
+summary(ordinal_ins) 
+ordinal_risk =clm(reversed_rating_num ~ frame_gain * risk + scenario + temp_c,data = gpt3)
+summary(ordinal_risk) 
+ordinal_all <- clm(reversed_rating_num ~ frame_gain * risk + frame_gain * instructions + frame_gain * sys_role + scenario + temp_c, data = gpt3)
+summary(ordinal_all) 
+  #when moving from a loss frame (coded as 0) to a gain frame (coded as 1), there's a decrease in the preference for Proposal A
+  #when the risk is explicitly mentioned, there is an increased preference for Proposal A compared to when risk is not mentioned; Becomes even stronger if included in the system role and in the user message. 
+stargazer(ordinal_sys, ordinal_ins,ordinal_risk, ordinal_all, type = "text", out="ordinalpromptvars.html")
+
+
+
+
+
+###############################################################################################################
+
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+################################### Cross Comparative Analysis ################################################
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+
+###############################################################################################################
+
+## Load in Data
+combined <- "/Users/annaking/Documents/Github/riskychoiceframing_AI/Experiment 1/analysis/human_and_AI_combined.csv"
+df_combined <- read_csv(combined)
+
+#set cat order for source var
+df_combined$source_1 = factor(df_combined$source, levels = c("human", "AI"))
+df_combined$source_2 = factor(df_combined$source, levels = c("AI", "human"))
+
+#set cat order for scenario var
+df_combined$scenario = factor(df_combined$scenario, levels = c("forest", "human", "animal"))
+
+### Hypotheses Testing ###
+###### H3A: Preference for Option A in the gain frame with logistic regression
+    #coeff frame_gain: the change in humans' odds of choosing Option A when they move from the loss to the gain frame.
+    #coeff source_1: the difference between AI and humans in the loss frame (since loss is the reference).
+    #coeff source_1:frame_gain: whether the change in odds for AI (from loss to gain frame) is different from that of humans.
+    #a model to understand how the choice between Option A and Option B changes based on two main factors: frame (gain vs loss); participant type (human vs. AI)
+
+##Basic Model 
+logit_source_A <- glm(option_selected_A ~ frame_gain * source_1 , data = df_combined, family = binomial())
+summary(logit_sourcehum_A)   
+coefs_A <- coef(logit_sourcehum_A)
+odds_ratio_AI_A <- exp(coef_A["source_1AI"] + coef_A["frame_gain:source_1AI"])
+print(odds_ratio_AI_A) 
+    #odds_ratio_AI_A: Represents the odds of AI choosing Option A over Option B in the gain frame (relative to the loss frame) compared to the same odds for humans
+odds_ratio_AI_Hum <- exp(coef_A["frame_gain:source_1AI"])
+print(odds_ratio_AI_Hum) 
+     #odds_ratio_AI_A: Represents how the odds of AI choosing Option A over Option B when transitioning from the loss frame to the gain frame differ from the odds of humans making the same transition.
+
+# Define a function to convert odds to probabilities
+odds_to_prob <- function(odds) {
+  return(odds / (1 + odds))
+}
+odds_example <- odds_ratio_AI_Hum
+probability_example <- odds_to_prob(odds_example)
+print(probability_example)
+## + Scenario Control 
+logit_source_scn <- glm(option_selected_A ~ frame_gain * source_1 + scenario, data = df_combined, family = binomial())
+summary(logit_source_scn)
+
+### + Temp Control 
+logit_source_temp <- glm(option_selected_A ~ frame_gain * source_1 + scenario + temp_alt, data = df_combined, family = binomial())
+summary(logit_source_temp)
+
+######### Investigate Gain versus Loss Condition
+
+###Split by gain and loss
+##I believe i need to boostrap the human as the power is too low?????? 
+df_gain = subset(df_combined, frame_gain == 1)
+df_gain$source_1 <- factor(df_gain$source, levels = c("human", "AI"))
+df_gain$source_2 <- factor(df_gain$source, levels = c("AI", "human"))
+
+df_loss = subset(df_combined, frame_loss == 0)
+df_loss$source_1 <- factor(df_loss$source, levels = c("human", "AI"))
+df_loss$source_2 <- factor(df_loss$source, levels = c("AI", "human"))
+
+logit_gain_A_AI <- glm(option_selected_A ~ source_1, data = df_gain, family = binomial())
+logit_gain_A_hum <- glm(option_selected_A ~ source_2, data = df_gain, family = binomial())
+summary(logit_gain_B_AI)
+summary(logit_gain_B_hum)
+
+logit_loss_B_AI <- glm(option_selected_B ~ source_1, data = df_loss, family = binomial())
+logit_loss_B_hum <- glm(option_selected_B ~ source_2, data = df_loss, family = binomial())
+summary(logit_loss_B_AI)
+summary(logit_loss_B_hum)
+
+####### Create Tables
+
+############### ################ ############### ################
+get_model_values <- function(model) {
+  coef_sum <- coef(summary(model))
+  results <- c()
+  for (name in rownames(coef_sum)) {
+    est <- coef_sum[name, 1]
+    se <- coef_sum[name, 2]
+    pvalue <- coef_sum[name, 4]
+    significance <- if (pvalue < 0.05) "*" else ""
+    results[name] <- paste0(round(est, 3), " (", round(se, 3), ") ", significance)
+  }
+  results["Observations"] <- length(model$fitted.values)
+  results["Pseudo R^2"] <- round(1 - model$deviance / model$null.deviance, 3)
+  return(results)
+}
+results_A <- get_model_values(logit_sourcehum_A)
+results_B2 <- get_model_values(logit_sourcehum_B2)
+results_B <- get_model_values(logit_sourcehum_B)
+results_A2 <- get_model_values(logit_sourcehum_A2)
+
+table <- data.frame(
+  `Model A` = results_A,
+  `Model B2` = results_B2,
+  `Model B` = results_B,
+  `Model A2` = results_A2
+)
+print(table, row.names=TRUE)
+write_xlsx(table, "modelcompare_cross.xlsx")
+
+
+ ############### ################ ############### ################
+
+###### H4B: Influence of AI prompt on similarity
+# - Investigate the interaction between the type of AI prompt and frame (gain/loss) in influencing the AI's choices.
+# - Include an interaction term between AI prompt and frame in a logistic regression with Option_selected as the dependent variable.
+
+
+
+
+
+
+
+############ ARCHIVE - CROSS COMAPRE ############
+logit_sourcehum_A <- glm(option_selected_B ~ frame_loss * source_1 , data = df_combined, family = binomial())
+summary(logit_sourcehum_A) 
+
+'option_selected_A ~ frame_gain * source_1'
+
+""" Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             0.6035     0.2102   2.871  0.00409 ** 
+frame_gain              0.5879     0.3139   1.873  0.06109 .  
+source_1AI             -0.4097     0.2169  -1.889  0.05888 .  
+frame_gain:source_1AI  -1.5875     0.3236  -4.905 9.33e-07 *** """
+
+'option_selected_B ~ frame_gain * source_1' 
+
+"""Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            -0.6035     0.2102  -2.871  0.00409 ** 
+frame_gain             -0.5879     0.3139  -1.873  0.06109 .  
+source_1AI              0.4097     0.2169   1.889  0.05888 .  
+frame_gain:source_1AI   1.5875     0.3236   4.905 9.33e-07 ***"""
+
+'option_selected_A ~ frame_loss * source_1' 
+#going from gain to loss frame
+##option A to Option B 
+"""                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             1.1914     0.2331   5.112 3.19e-07 ***
+frame_loss             -0.5879     0.3139  -1.873   0.0611 .  
+source_1AI             -1.9971     0.2402  -8.314  < 2e-16 ***
+frame_loss:source_1AI   1.5875     0.3236   4.905 9.33e-07 ***"""  ##A negative combined effect indicates that AI has lower log odds of choosing Option B over Option A than humans in the loss frame.
+
+'option_selected_B ~ frame_loss * source_1' 
+#going from gain to loss frame
+##option B to Option A
+
+"""Coefficients:
+                      Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            -1.1914     0.2331  -5.112 3.19e-07 ***
+frame_loss              0.5879     0.3139   1.873   0.0611 .  
+source_1AI              1.9971     0.2402   8.314  < 2e-16 ***
+frame_loss:source_1AI  -1.5875     0.3236  -4.905 9.33e-07 ***"""
