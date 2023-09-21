@@ -1,0 +1,168 @@
+gender,student,education,ethnicity,continent_grouped,age,ADP_familiar,frame,scenario_mapped
+Male,No,Associates or technical degree,White or Caucasian,Other / Not Provided,35 - 44 years old,,gain,animals_gain
+Male,No,Bachelor's degree,White or Caucasian,North America,45 - 54 years old,,loss,animals_loss
+Other,No,Bachelor's degree,White or Caucasian,Europe,35 - 44 years old,,gain,forest_gain
+Male,Yes,Completed high school / secondary school,Asian,Asia,18 - 24 years old,No,loss,humans_loss
+Female,No,Bachelor's degree,White or Caucasian,Europe,35 - 44 years old,No,gain,humans_gain
+Male,No,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,North America,25 - 34 years old,Yes,loss,forest_loss
+Female,No,Bachelor's degree,White or Caucasian,North America,35 - 44 years old,No,gain,forest_gain
+Female,No,Associates or technical degree,White or Caucasian,Other / Not Provided,25 - 34 years old,Yes,loss,humans_loss
+Male,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,Yes,gain,forest_gain
+Female,No,Associates or technical degree,White or Caucasian,North America,25 - 34 years old,Yes,loss,animals_loss
+Male,Yes,Completed high school / secondary school,White or Caucasian,Other / Not Provided,18 - 24 years old,No,gain,humans_gain
+Other,Yes,Associates or technical degree,White or Caucasian,Europe,18 - 24 years old,No,gain,animals_gain
+Female,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,No,gain,forest_gain
+Male,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,Yes,loss,humans_loss
+Female,Yes,Bachelor's degree,White or Caucasian,Europe,25 - 34 years old,No,loss,forest_loss
+Male,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,North America,25 - 34 years old,Yes,gain,forest_gain
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",Asian,North America,25 - 34 years old,Yes,gain,humans_gain
+Male,No,Bachelor's degree,White or Caucasian,Europe,35 - 44 years old,No,loss,humans_loss
+Male,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,No,loss,animals_loss
+Male,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,Yes,loss,animals_loss
+Male,No,Associates or technical degree,White or Caucasian,Europe,25 - 34 years old,No,gain,humans_gain
+Male,No,Bachelor's degree,Asian,Asia,45 - 54 years old,Yes,loss,forest_loss
+Female,No,Bachelor's degree,Asian,Asia,35 - 44 years old,Yes,gain,humans_gain
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",Black/African/Caribbean,Asia,25 - 34 years old,Yes,loss,humans_loss
+Female,No,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",Asian,Asia,25 - 34 years old,Yes,loss,animals_loss
+Male,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,Asia,35 - 44 years old,Yes,loss,forest_loss
+Male,Yes,Bachelor's degree,White or Caucasian,Europe,18 - 24 years old,No,gain,forest_gain
+Female,No,Bachelor's degree,White or Caucasian,North America,55 - 64 years old,Yes,loss,animals_loss
+Male,Yes,Bachelor's degree,White or Caucasian,North America,35 - 44 years old,Yes,loss,humans_loss
+Female,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,No,gain,animals_gain
+Male,Yes,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,Yes,loss,animals_loss
+Male,Yes,Associates or technical degree,White or Caucasian,Europe,25 - 34 years old,Yes,gain,animals_gain
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,Asia,25 - 34 years old,Yes,gain,animals_gain
+Female,Yes,Associates or technical degree,Black/African/Caribbean,Other / Not Provided,18 - 24 years old,Yes,gain,humans_gain
+Male,No,Associates or technical degree,White or Caucasian,North America,25 - 34 years old,Yes,loss,forest_loss
+Male,No,Associates or technical degree,White or Caucasian,North America,25 - 34 years old,Yes,loss,humans_loss
+Male,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,Yes,gain,forest_gain
+Male,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,Yes,gain,animals_gain
+Male,No,Bachelor's degree,White or Caucasian,North America,35 - 44 years old,Yes,loss,forest_loss
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,North America,25 - 34 years old,Yes,loss,animals_loss
+Other,Yes,Bachelor's degree,Black/African/Caribbean,Europe,45 - 54 years old,No,gain,forest_gain
+Female,Yes,Completed high school / secondary school,Black/African/Caribbean,Europe,35 - 44 years old,No,loss,forest_loss
+Male,No,Bachelor's degree,White or Caucasian,Europe,25 - 34 years old,No,loss,animals_loss
+Female,Yes,Bachelor's degree,White or Caucasian,Asia,25 - 34 years old,Yes,loss,humans_loss
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,Europe,25 - 34 years old,No,gain,animals_gain
+Female,No,Completed high school / secondary school,White or Caucasian,Other / Not Provided,25 - 34 years old,No,gain,forest_gain
+Female,Yes,Completed high school / secondary school,White or Caucasian,Europe,18 - 24 years old,No,loss,animals_loss
+Male,No,Completed high school / secondary school,White or Caucasian,North America,25 - 34 years old,No,loss,forest_loss
+Male,Yes,Bachelor's degree,White or Caucasian,Europe,18 - 24 years old,No,gain,humans_gain
+Male,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,Europe,25 - 34 years old,No,gain,animals_gain
+Male,Yes,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,No,loss,humans_loss
+Female,No,Bachelor's degree,White or Caucasian,North America,35 - 44 years old,No,gain,forest_gain
+Female,Yes,Bachelor's degree,Asian,Asia,25 - 34 years old,No,gain,forest_gain
+Male,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",Asian,Asia,35 - 44 years old,No,loss,animals_loss
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",Asian,Europe,25 - 34 years old,No,loss,forest_loss
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",Asian,Europe,25 - 34 years old,No,loss,animals_loss
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",Asian,Asia,25 - 34 years old,No,gain,humans_gain
+Male,No,Bachelor's degree,Asian,Asia,25 - 34 years old,Yes,loss,humans_loss
+Female,No,Associates or technical degree,White or Caucasian,North America,25 - 34 years old,Yes,loss,humans_loss
+Male,No,Associates or technical degree,White or Caucasian,North America,35 - 44 years old,No,loss,animals_loss
+Male,Yes,Bachelor's degree,Black/African/Caribbean,North America,18 - 24 years old,No,gain,animals_gain
+Male,No,Associates or technical degree,Prefer not to say,Europe,25 - 34 years old,No,loss,animals_loss
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,Europe,18 - 24 years old,No,loss,forest_loss
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",Black/African/Caribbean,Europe,25 - 34 years old,No,gain,forest_gain
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",Asian,Asia,25 - 34 years old,No,loss,humans_loss
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,Other / Not Provided,35 - 44 years old,No,gain,animals_gain
+Male,No,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,North America,35 - 44 years old,Yes,gain,humans_gain
+Female,No,Associates or technical degree,Asian,North America,25 - 34 years old,Yes,loss,forest_loss
+Male,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",Black/African/Caribbean,North America,35 - 44 years old,Yes,loss,animals_loss
+Male,No,Bachelor's degree,White or Caucasian,North America,35 - 44 years old,Yes,loss,humans_loss
+Male,No,Associates or technical degree,White or Caucasian,North America,18 - 24 years old,Yes,gain,humans_gain
+Female,No,Completed high school / secondary school,Black/African/Caribbean,North America,25 - 34 years old,No,gain,forest_gain
+Female,No,Associates or technical degree,White or Caucasian,North America,35 - 44 years old,Yes,gain,forest_gain
+Female,No,Completed high school / secondary school,White or Caucasian,North America,18 - 24 years old,No,gain,humans_gain
+Male,No,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,North America,25 - 34 years old,Yes,gain,animals_gain
+Female,Yes,Completed high school / secondary school,Black/African/Caribbean,Europe,18 - 24 years old,Yes,gain,humans_gain
+Male,Yes,Associates or technical degree,White or Caucasian,Other / Not Provided,25 - 34 years old,Yes,gain,forest_gain
+Female,No,Bachelor's degree,White or Caucasian,Europe,25 - 34 years old,Yes,loss,animals_loss
+Female,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,No,gain,forest_gain
+Female,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,Yes,loss,animals_loss
+Male,No,Associates or technical degree,White or Caucasian,North America,25 - 34 years old,No,gain,forest_gain
+Other,Yes,Completed high school / secondary school,White or Caucasian,North America,18 - 24 years old,No,gain,animals_gain
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",Asian,Asia,25 - 34 years old,Yes,loss,animals_loss
+Male,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,No,loss,forest_loss
+Male,No,Completed high school / secondary school,White or Caucasian,North America,25 - 34 years old,Yes,loss,humans_loss
+Male,No,Bachelor's degree,White or Caucasian,North America,18 - 24 years old,Yes,gain,humans_gain
+Male,No,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,North America,25 - 34 years old,Yes,gain,humans_gain
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,Europe,25 - 34 years old,No,loss,forest_loss
+Female,No,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,Europe,25 - 34 years old,Yes,gain,forest_gain
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,Europe,35 - 44 years old,No,loss,humans_loss
+Male,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,No,gain,forest_gain
+Female,Yes,Bachelor's degree,Asian,Asia,18 - 24 years old,Yes,loss,animals_loss
+Male,Yes,Bachelor's degree,Asian,Asia,25 - 34 years old,No,gain,humans_gain
+Male,Yes,Completed high school / secondary school,White or Caucasian,Other / Not Provided,18 - 24 years old,No,gain,forest_gain
+Female,No,Completed high school / secondary school,White or Caucasian,Other / Not Provided,18 - 24 years old,No,loss,animals_loss
+Male,Yes,Completed high school / secondary school,White or Caucasian,Europe,18 - 24 years old,No,gain,animals_gain
+Female,No,Associates or technical degree,White or Caucasian,North America,25 - 34 years old,Yes,loss,humans_loss
+Male,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",Asian,Europe,25 - 34 years old,No,gain,animals_gain
+Female,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,No,gain,humans_gain
+Male,No,Bachelor's degree,White or Caucasian,North America,35 - 44 years old,No,loss,humans_loss
+Male,Yes,Completed high school / secondary school,White or Caucasian,Europe,25 - 34 years old,Yes,gain,animals_gain
+Male,No,Associates or technical degree,White or Caucasian,North America,25 - 34 years old,Yes,gain,humans_gain
+Female,No,Bachelor's degree,White or Caucasian,Europe,25 - 34 years old,No,gain,humans_gain
+Male,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,Other / Not Provided,25 - 34 years old,No,loss,humans_loss
+Female,No,Bachelor's degree,White or Caucasian,Other / Not Provided,18 - 24 years old,No,gain,animals_gain
+Male,No,Bachelor's degree,Black/African/Caribbean,North America,25 - 34 years old,No,gain,humans_gain
+Female,Yes,Bachelor's degree,White or Caucasian,Europe,25 - 34 years old,No,gain,animals_gain
+Female,No,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,Europe,25 - 34 years old,No,loss,animals_loss
+Male,Yes,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,No,loss,forest_loss
+Female,Yes,Bachelor's degree,White or Caucasian,North America,18 - 24 years old,No,loss,animals_loss
+Male,No,Bachelor's degree,White or Caucasian,North America,18 - 24 years old,Yes,gain,humans_gain
+Female,No,Bachelor's degree,White or Caucasian,North America,18 - 24 years old,Yes,loss,humans_loss
+Male,No,Associates or technical degree,White or Caucasian,North America,25 - 34 years old,Yes,gain,forest_gain
+Male,Yes,Bachelor's degree,White or Caucasian,North America,18 - 24 years old,Yes,gain,animals_gain
+Male,No,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,North America,35 - 44 years old,Yes,loss,forest_loss
+Female,Yes,Associates or technical degree,White or Caucasian,Other / Not Provided,18 - 24 years old,Yes,gain,forest_gain
+Female,Yes,Completed high school / secondary school,White or Caucasian,Other / Not Provided,25 - 34 years old,Yes,gain,forest_gain
+Male,No,Bachelor's degree,White or Caucasian,North America,45 - 54 years old,Yes,gain,forest_gain
+Male,No,Associates or technical degree,White or Caucasian,North America,25 - 34 years old,No,gain,forest_gain
+Female,Yes,Associates or technical degree,Asian,North America,25 - 34 years old,Yes,loss,forest_loss
+Male,Yes,Bachelor's degree,White or Caucasian,North America,35 - 44 years old,Yes,gain,forest_gain
+Female,Yes,Bachelor's degree,White or Caucasian,North America,18 - 24 years old,No,loss,forest_loss
+Male,Yes,Associates or technical degree,Black/African/Caribbean,North America,18 - 24 years old,Yes,loss,humans_loss
+Male,No,Completed high school / secondary school,Black/African/Caribbean,North America,25 - 34 years old,Yes,gain,forest_gain
+Male,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,Yes,loss,humans_loss
+Male,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,Yes,gain,forest_gain
+Female,Yes,Bachelor's degree,Other,Europe,35 - 44 years old,No,loss,forest_loss
+Female,Yes,Bachelor's degree,Prefer not to say,Other / Not Provided,25 - 34 years old,No,loss,animals_loss
+Female,Yes,Bachelor's degree,White or Caucasian,North America,18 - 24 years old,No,loss,humans_loss
+Male,No,Bachelor's degree,Black/African/Caribbean,North America,55 - 64 years old,Yes,gain,humans_gain
+Male,No,Associates or technical degree,White or Caucasian,North America,25 - 34 years old,No,gain,animals_gain
+Male,No,Associates or technical degree,White or Caucasian,North America,25 - 34 years old,Yes,loss,forest_loss
+Male,No,Bachelor's degree,Black/African/Caribbean,North America,55 - 64 years old,Yes,gain,forest_gain
+Male,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",Asian,Other / Not Provided,25 - 34 years old,Yes,gain,animals_gain
+Female,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,Yes,gain,humans_gain
+Other,No,Bachelor's degree,Asian,Other / Not Provided,25 - 34 years old,No,gain,humans_gain
+Male,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,Yes,loss,humans_loss
+Other,Yes,Associates or technical degree,White or Caucasian,Other / Not Provided,18 - 24 years old,No,gain,forest_gain
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,Europe,35 - 44 years old,No,loss,animals_loss
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",Asian,North America,18 - 24 years old,Yes,loss,humans_loss
+Female,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,Yes,loss,animals_loss
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",Asian,Europe,25 - 34 years old,No,gain,animals_gain
+Female,Yes,Bachelor's degree,White or Caucasian,Europe,25 - 34 years old,No,loss,forest_loss
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,Europe,18 - 24 years old,No,gain,animals_gain
+Male,No,Bachelor's degree,Black/African/Caribbean,North America,25 - 34 years old,Yes,gain,humans_gain
+Female,Yes,Bachelor's degree,White or Caucasian,Europe,18 - 24 years old,No,gain,forest_gain
+Male,Yes,Bachelor's degree,Black/African/Caribbean,Europe,25 - 34 years old,No,gain,forest_gain
+Female,No,Associates or technical degree,White or Caucasian,North America,35 - 44 years old,No,gain,animals_gain
+Female,No,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,North America,25 - 34 years old,No,gain,humans_gain
+Female,Yes,Bachelor's degree,White or Caucasian,Europe,45 - 54 years old,No,loss,forest_loss
+Male,No,Completed high school / secondary school,Other,North America,25 - 34 years old,No,loss,humans_loss
+Female,No,Bachelor's degree,White or Caucasian,Europe,25 - 34 years old,No,gain,animals_gain
+Female,No,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",Asian,North America,25 - 34 years old,No,loss,humans_loss
+Female,No,Bachelor's degree,White or Caucasian,Asia,25 - 34 years old,No,gain,forest_gain
+Female,No,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,Europe,25 - 34 years old,No,gain,humans_gain
+Female,No,Bachelor's degree,White or Caucasian,North America,35 - 44 years old,No,loss,animals_loss
+Female,Yes,Completed high school / secondary school,White or Caucasian,Other / Not Provided,18 - 24 years old,Yes,gain,forest_gain
+Female,Yes,Completed high school / secondary school,White or Caucasian,North America,18 - 24 years old,No,loss,animals_loss
+Female,Yes,Bachelor's degree,Asian,Asia,18 - 24 years old,No,gain,humans_gain
+Female,Yes,"Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)",White or Caucasian,North America,25 - 34 years old,Yes,loss,forest_loss
+Male,Yes,Completed high school / secondary school,White or Caucasian,Europe,18 - 24 years old,No,loss,humans_loss
+Male,No,Bachelor's degree,White or Caucasian,North America,45 - 54 years old,No,gain,humans_gain
+Male,No,Bachelor's degree,White or Caucasian,North America,25 - 34 years old,No,loss,animals_loss
+Male,No,Bachelor's degree,Asian,Europe,18 - 24 years old,No,gain,animals_gain
+Male,No,Associates or technical degree,White or Caucasian,Europe,35 - 44 years old,No,gain,forest_gain
+Male,No,Bachelor's degree,White or Caucasian,Europe,25 - 34 years old,No,loss,forest_loss
+Female,Yes,Bachelor's degree,White or Caucasian,Other / Not Provided,18 - 24 years old,No,gain,humans_gain

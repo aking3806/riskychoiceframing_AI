@@ -1,0 +1,8 @@
+,scenario_clean,age,gender_grouped,ethnicity_grouped,education,student,continent_grouped
+scenario_clean,1.0,0.0,0.0,0.0,0.0,0.0,0.03
+age,0.0,1.0,0.08,0.0,0.16,0.39,0.13
+gender_grouped,0.0,0.08,1.0,0.0,0.1,0.13,0.16
+ethnicity_grouped,0.0,0.0,0.0,1.0,0.15,0.11,0.29
+education,0.0,0.16,0.1,0.15,1.0,0.25,0.23
+student,0.0,0.39,0.13,0.11,0.25,0.99,0.47
+continent_grouped,0.03,0.13,0.16,0.29,0.23,0.47,1.0

@@ -1,0 +1,981 @@
+library(readr)
+library(dplyr)
+library(tidyr)
+library(ordinal)
+library(tibble)
+library(ggplot2)
+library(car)
+library(apaTables)
+library(huxtable)
+library(jtools)
+library(broom)
+library(stargazer)
+library(writexl)
+library(gtsummary)
+library(MASS)
+library(lme4)
+library(logistf)
+library(tidyverse)
+
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+############################ Experiment 1 ############################
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+
+## Load in Data
+data_path <- "/Users/annaking/Documents/Github/riskychoiceframing_AI/Experiment 1/analysis/main_analysis_forR.csv"
+main_analysis <- read_csv(data_path)
+table(main_analysis$ethnicity_grouped )
+
+#Set reference groups for cat variables 
+main_analysis$ethnicity_grouped <- factor(main_analysis$ethnicity_grouped, levels = c("White or Caucasian", "Asian", "Black/African/Caribbean", "Not Provided/Other"))
+main_analysis$education <- factor(main_analysis$education, levels = c("Bachelor's degree", "Associates or technical degree", "Graduate or professional degree (MA, MS, MBA, PHd, JD, MD, etc.)", "Completed high school / secondary school"))
+main_analysis$scenario_clean <- factor(main_analysis$scenario_clean, levels = c("forest", "animals", "humans"))
+main_analysis$continent_grouped <- factor(main_analysis$continent_grouped, levels = c("North America", "Europe", "Other / Not Provided", "Asia"))
+main_analysis$age_grouped <- factor(main_analysis$age_grouped, levels = c("25 - 34 years old", "18 - 24 years old",  "35+"))
+main_analysis$reversed_rating_num = factor(main_analysis$reversed_rating_num, levels = c(1,2,3,4,5,6,7))
+
+##Create subset dataframes for regression robustness checks 
+#where rationale is provided
+rationale_incl = subset(main_analysis, !is.na(rationale))
+
+#gain & loss conditions -- rationale incl
+gain_condition_rationale = subset(rationale_incl,frame == 'gain')
+loss_condition_rationale  = subset(rationale_incl,frame == 'loss')
+
+#where ADP not indicated as familiar
+noADP  = subset(main_analysis,ADP_familiar != "Yes")
+rationale_incl_noADP = subset(rationale_incl,ADP_familiar != "Yes")
+
+
+############## H1: Logistic regression ##############
+#Basic 
+logit_basic_v1 <- glm(option_selected_A ~ frame_gain, data = main_analysis, family = binomial())
+#Scenario 
+logit_scn <- glm(option_selected_A ~ frame_gain + scenario_clean, data = main_analysis, family = binomial())
+#Dem Basic
+logit_dembasic <- glm(option_selected_A ~ frame_gain + scenario_clean + age_grouped + ethnicity_grouped + education + gender_grouped, data = main_analysis, family = binomial())
+#All Controls  
+logit_cont <- glm(option_selected_A ~ frame_gain + scenario_clean + age_grouped + ethnicity_grouped + education + gender_grouped +  continent_grouped + ADP_familiar + student, data = main_analysis, family = binomial())
+
+#table
+stargazer(logit_basic_v1, logit_scn, logit_dembasic,logit_cont, 
+type = "text", 
+dep.var.labels=c("Option Selected (A)"),
+covariate.labels=c("Frame (Gain)", "Scenario (Human)", "Scenario (Animal)", "Age (25 - 34)", "Age (35+)", "Ethnicity (Asian)", "Ethnicity (Black/African/Caribbean)", 
+"Ethnicity (Not Provided/Other)", "Education (Associates or technical degree)", "Education (Graduate or professional degree)", "Education (Completed high school / secondary school)", "Gender (Male)", "Gender (Other / Prefer not to say)", "Continent (Europe)", "Continent (Other / Not Provided)", "Continent (Asia)", "ADP Familiar (Yes)", "Student (Yes)", "Constant"),
+out="H1.1_results_table.html")
+#OR table 
+stargazer(logit_basic_v1, logit_scn, logit_dembasic,logit_cont, 
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text'
+          ,covariate.labels=c("Frame (Gain)", "Scenario (Animal)", "Scenario (Human)", "Age (18 - 24)", "Age (35+)","Ethnicity (Asian)", "Ethnicity (Black/African/Caribbean)", "Ethnicity (Not Provided/Other)", "Education (Associates or technical degree)", "Education (Graduate or professional degree)", "Education (Completed high school / secondary school)", "Gender (Male)", "Gender (Other / Prefer not to say)", "Constant")
+          ,out="H.1_results_table_or.html")
+
+
+#########  ADP Versions ##########
+###Robustness Check (ADP Version)
+#Control for ADP 
+logit_ADPNo_con =  glm(option_selected_A ~ frame_gain + scenario_clean + ADP_No, data = main_analysis, family = binomial())
+summary(logit_ADPNo_con)
+#Control for ADP ; Rationle = Yes
+logit_ADPNo_rationale_incl_con = glm(option_selected_A ~ frame_gain + scenario_clean + ADP_No, data = rationale_incl,family = binomial())
+##ADP Familiar excluded
+logit_noADP = glm(option_selected_A ~ frame_gain + scenario_clean, data = noADP , family = binomial())
+##Rationle = Yes with ADP Familiar excluded
+logit_noADP2 = glm(option_selected_A ~ frame_gain + scenario_clean, data = rationale_incl_noADP,family = binomial())
+
+#table
+stargazer(logit_ADPNo_con,logit_reg_noADP, logit_ADPNo_rationale_incl_con, 
+type = "text", 
+dep.var.labels=c("Option Selected (A)"), 
+covariate.labels=c("Frame (Gain)", "Scenario (Animal)", "Scenario (Human)", "ADP Familiar (Yes)", "Constant"),
+out="ADP_results_table.html")
+#table2
+stargazer(logit_noADP2,
+type = "text",
+dep.var.labels=c("Option Selected (A)"),
+covariate.labels=c("Frame (Gain)", "Scenario (Animal)", "Scenario (Human)", "Constant"),
+out="ADP_results_table2.html")
+
+#table OR
+stargazer(logit_ADPNo_con,logit_reg_noADP, logit_ADPNo_rationale_incl_con,
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text'
+          ,out="H.ADP_results_table_or.html")
+#table2 OR
+stargazer(logit_noADP2,
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text'
+          ,out="H.ADP_results_table_or2.html")
+
+table(rationale_incl$ethnicity_grouped)
+
+###Robustness Check (Rationale)
+logit_basic_rationale =glm(option_selected_A ~ frame_gain,data = rationale_incl,family = binomial())
+#Scenario
+logit_scn_rationale =glm(option_selected_A ~ frame_gain + scenario_clean,data = rationale_incl,family = binomial())
+summary(logit_scn_rationale)
+logit_dem_rationale =glm(option_selected_A ~ frame_gain + scenario_clean + age_grouped + ethnicity_grouped + education + gender_grouped,data = rationale_incl,family = binomial())
+#All Controls  
+logit_con_rationale =glm(option_selected_A ~ frame_gain + scenario_clean + age_grouped + ethnicity_grouped + education + gender_grouped +  continent_grouped + ADP_familiar + student,data = rationale_incl,family = binomial())
+#table 1
+stargazer(logit_basic_rationale,logit_scn_rationale, logit_dem_rationale,
+type = 'text',
+dep.var.labels=c("Option Selected (A)"),
+covariate.labels=c("Frame (Gain)", "Scenario (Animal)", "Scenario (Human)", "Age (18 - 24)", "Age (35+)","Ethnicity (Asian)", "Ethnicity (Black/African/Caribbean)", "Ethnicity (Not Provided/Other)", "Education (Associates or technical degree)", "Education (Graduate or professional degree)", "Education (Completed high school / secondary school)", "Gender (Male)", "Gender (Other / Prefer not to say)", "Constant")
+,out="logit_rationle.html")
+#table 2
+stargazer(logit_con_rationale,
+type = 'text',
+dep.var.labels=c("Rating Scale^"),
+covariate.labels=c("Frame (Gain)", "Scenario (Animal)", "Scenario (Human)", "Age (18 - 24)", "Age (35+)","Ethnicity (Asian)", "Ethnicity (Black/African/Caribbean)", "Ethnicity (Not Provided/Other)", "Education (Associates or technical degree)", "Education (Graduate or professional degree)", "Education (Completed high school / secondary school)", "Gender (Male)", "Gender (Other / Prefer not to say)", "Continent (Europe)", "Continent (Other / Not Provided)", "Continent (Asia)", "ADP Familiar (Yes)", "Student (Yes)", "Constant")
+,out="logit_rationle2.html")
+#OR table 1
+stargazer(logit_basic_rationale, logit_scn_rationale,logit_dem_rationale,
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text'
+          ,covariate.labels=c("Frame (Gain)", "Scenario (Animal)", "Scenario (Human)", "Age (18 - 24)", "Age (35+)","Ethnicity (Asian)", "Ethnicity (Black/African/Caribbean)", "Ethnicity (Not Provided/Other)", "Education (Associates or technical degree)", "Education (Graduate or professional degree)", "Education (Completed high school / secondary school)", "Gender (Male)", "Gender (Other / Prefer not to say)", "Constant")
+          ,out="logit_rationle_or.html")
+#OR table 2
+stargazer(logit_con_rationale,
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text'
+          ,covariate.labels=c("Frame (Gain)", "Scenario (Animal)", "Scenario (Human)", "Age (18 - 24)", "Age (35+)","Ethnicity (Asian)", "Ethnicity (Black/African/Caribbean)", "Ethnicity (Not Provided/Other)", "Education (Associates or technical degree)", "Education (Graduate or professional degree)", "Education (Completed high school / secondary school)", "Gender (Male)", "Gender (Other / Prefer not to say)", "Continent (Europe)", "Continent (Other / Not Provided)", "Continent (Asia)", "ADP Familiar (Yes)", "Student (Yes)", "Constant")
+          ,out="logit_rationle_or2.html")
+
+
+#########  Additional Analysis on Scenario ##########
+
+
+
+############## H2: Ordinal regression ##############
+
+#Basic
+ordinal_basic =clm(reversed_rating_num ~ frame_gain,data = main_analysis)
+summary(ordinal_basic)
+#Scenario
+ordinal_scn =clm(reversed_rating_num ~ frame_gain + scenario_clean,data = main_analysis)
+summary(ordinal_scn)
+#Demographics
+ordinal_dem =clm(reversed_rating_num ~ frame_gain + scenario_clean + age_grouped + ethnicity_grouped + education + gender_grouped,data = main_analysis)
+summary(ordinal_dem)
+#All Controls  
+ordinal_conall =clm(reversed_rating_num ~ frame_gain + scenario_clean + age_grouped + ethnicity_grouped + education + gender_grouped +  continent_grouped + ADP_familiar + student,data = main_analysis)
+summary(ordinal_conall)
+
+
+#table 1
+stargazer(ordinal_basic,ordinal_scn, ordinal_dem,ordinal_conall,
+type = 'text',
+dep.var.labels=c("Rating Scale^"),
+covariate.labels=c("Frame (Gain)", "Scenario (Animal)", "Scenario (Human)", "Age (18 - 24)", "Age (35+)","Ethnicity (Asian)", "Ethnicity (Black/African/Caribbean)", "Ethnicity (Not Provided/Other)", "Education (Associates or technical degree)", "Education (Graduate or professional degree)", "Education (Completed high school / secondary school)", "Gender (Male)", "Gender (Other / Prefer not to say)", "Continent (Europe)", "Continent (Other / Not Provided)", "Continent (Asia)", "ADP Familiar (Yes)", "Student (Yes)", "Constant"),
+out="ordinal_results.html")
+#OR table 1
+stargazer(ordinal_basic,ordinal_scn, ordinal_dem,
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text',
+          covariate.labels=c("Frame (Gain)", "Scenario (Animal)", "Scenario (Human)", "Age (18 - 24)", "Age (35+)","Ethnicity (Asian)", "Ethnicity (Black/African/Caribbean)", "Ethnicity (Not Provided/Other)", "Education (Associates or technical degree)", "Education (Graduate or professional degree)", "Education (Completed high school / secondary school)", "Gender (Male)", "Gender (Other / Prefer not to say)"),
+          out="ordinal_results_or.html")
+#OR table 2
+stargazer(ordinal_conall,
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text',
+          covariate.labels=c("Frame (Gain)", "Scenario (Animal)", "Scenario (Human)", "Age (18 - 24)", "Age (35+)","Ethnicity (Asian)", "Ethnicity (Black/African/Caribbean)", "Ethnicity (Not Provided/Other)", "Education (Associates or technical degree)", "Education (Graduate or professional degree)", "Education (Completed high school / secondary school)", "Gender (Male)", "Gender (Other / Prefer not to say)", "Continent (Europe)", "Continent (Other / Not Provided)", "Continent (Asia)", "ADP Familiar (Yes)", "Student (Yes)"),
+          out="ordinal_results_or2.html")
+
+## Robustness Check (rationale)
+#Basic 
+rationale_incl_basic = clm(reversed_rating_num ~ frame_gain , data = rationale_incl)
+#Scenario
+rationale_incl_scn = clm(reversed_rating_num ~ frame_gain + scenario_clean, data = rationale_incl)
+#Demographics
+rationale_incl_dem = clm(reversed_rating_num ~ frame_gain + scenario_clean + age_grouped + ethnicity_grouped + education + gender_grouped, data = rationale_incl)
+#All Controls  
+rationale_incl_dem_conall =clm(reversed_rating_num ~ frame_gain + scenario_clean + age_grouped + ethnicity_grouped + education + gender_grouped +  continent_grouped + ADP_familiar + student,data = rationale_incl)
+
+
+
+#table
+stargazer(rationale_incl_basic, rationale_incl_scn,rationale_incl_dem, 
+type = 'text')
+dep.var.labels=c("Rating Scale^"))
+,
+covariate.labels=c("Frame (Gain)", "Scenario (Animal)", "Scenario (Human)", "Age (18 - 24)", "Age (35+)","Ethnicity (Asian)" "Ethnicity (Black/African/Caribbean)", "Ethnicity (Not Provided/Other)", "Education (Associates or technical degree)", "Education (Graduate or professional degree)", "Education (Completed high school / secondary school)", "Gender (Male)", "Gender (Other / Prefer not to say)", "Continent (Europe)", "Continent (Other / Not Provided)", "Continent (Asia)", "ADP Familiar (Yes)", "Student (Yes)", "Constant"),
+out="ordinal_rationle.html")
+
+#OR table
+stargazer(rationale_incl_basic, rationale_incl_scn,rationale_incl_dem, 
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text')
+          covariate.labels=c("Frame (Gain)", "Scenario (Animal)", "Scenario (Human)", "Age (18 - 24)", "Age (35+)","Ethnicity (Asian)", "Ethnicity (Black/African/Caribbean)", "Ethnicity (Not Provided/Other)", "Education (Associates or technical degree)", "Education (Graduate or professional degree)", "Education (Completed high school / secondary school)", "Gender (Male)", "Gender (Other / Prefer not to say)"),
+          out="ordinal_rationle_or.html")
+
+stargazer(rationale_incl_dem_conall, apply.coef = exp,
+          apply.se   = exp,
+          type = 'text')
+
+###Robustness Check (ADP Version)
+Scenario
+ADP_scn = clm(reversed_rating_num ~ frame_gain + scenario_clean, data = rationale_incl)
+#Demographics
+ADP_dem = clm(reversed_rating_num ~ frame_gain + scenario_clean + age_grouped + ethnicity_grouped + education + gender_grouped, data = rationale_incl)
+#All Controls  
+ADP_dem_conall =c lm(reversed_rating_num ~ frame_gain + scenario_clean + age_grouped + ethnicity_grouped + education + gender_grouped +  continent_grouped + ADP_familiar + student,data = rationale_incl)
+
+#table
+stargazer(rationale_incl_scn,rationale_incl_dem, rationale_incl_dem_conall, 
+type = 'text',
+dep.var.labels=c("Rating Scale^"),
+covariate.labels=c("Frame (Gain)", "Scenario (Animal)", "Scenario (Human)", "Age (18 - 24)", "Age (35+)","Ethnicity (Asian)" "Ethnicity (Black/African/Caribbean)", "Ethnicity (Not Provided/Other)", "Education (Associates or technical degree)", "Education (Graduate or professional degree)", "Education (Completed high school / secondary school)", "Gender (Male)", "Gender (Other / Prefer not to say)", "Continent (Europe)", "Continent (Other / Not Provided)", "Continent (Asia)", "ADP Familiar (Yes)", "Student (Yes)", "Constant"),
+out="ordinal_rationle.html")
+
+#OR table
+stargazer(rationale_incl_scn,rationale_incl_dem, rationale_incl_dem_conall, 
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text',
+          covariate.labels=c("Frame (Gain)", "Scenario (Animal)", "Scenario (Human)", "Age (18 - 24)", "Age (35+)","Ethnicity (Asian)", "Ethnicity (Black/African/Caribbean)", "Ethnicity (Not Provided/Other)", "Education (Associates or technical degree)", "Education (Graduate or professional degree)", "Education (Completed high school / secondary school)", "Gender (Male)", "Gender (Other / Prefer not to say)"),
+          out="ordinal_rationle_or.html")
+
+
+
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+#################################################### Experiment 2 ############################################
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+df_gpt3 <- "/Users/annaking/Documents/Github/riskychoiceframing_AI/Experiment 2/df_gpt3_t7.csv"
+gpt3 <- read_csv(df_gpt3)
+dim(gpt3)
+
+round1_AI <- "/Users/annaking/Documents/Github/riskychoiceframing_AI/Experiment 2/df_gpt3_round1.csv"
+round1_AI <- read_csv(round1_AI)
+dim(round1_AI)
+
+##Set Reference Groups for Scearnio & clean variables
+gpt3$scenario <- factor(gpt3$scenario, levels = c("forest", "human", "animal"))
+gpt3$sys_role <- factor(gpt3$sys_role, levels = c("Neutral", "Human"))
+gpt3$reversed_rating_num = factor(gpt3$reversed_rating_num, levels = c(1,2,3,4,5,6,7))
+gpt3$option_selected <- factor(gpt3$option_selected, levels = c("Proposal B", "Proposal A"))
+gpt3$frame <- ifelse(gpt3$frame == "gain", "Gain", 
+                     ifelse(gpt3$frame == "loss", "Loss", gpt3$frame))
+gpt3$frame <- factor(gpt3$frame, levels = c("Loss", "Gain"))
+gpt3$option_selected <- as.numeric(gpt3$option_selected == 'Proposal A') 
+
+
+#round 1 version only
+round1_AI$scenario <- factor(round1_AI$scenario, levels = c("forest", "human", "animal"))
+round1_AI$sys_role <- factor(round1_AI$sys_role, levels = c("Neutral", "Human"))
+round1_AI$reversed_rating_num = factor(round1_AI$reversed_rating_num, levels = c(1,2,3,4,5,6,7))
+round1_AI$option_selected <- factor(gpt3$option_selected, levels = c("Proposal B", "Proposal A"))
+round1_AI$frame <- factor(round1_AI$frame, levels = c("Loss", "Gain"))
+round1_AI$option_selected <- as.numeric(round1_AI$option_selected == 'Proposal A') 
+
+
+df_for = subset(gpt3, scenario == "forest")
+df_hum = subset(gpt3, scenario == "human")
+df_an = subset(gpt3, scenario == "animal")
+
+###Sep data frames by Combo 
+
+df_combo1A = subset(gpt3, test == "['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']") ## simple 
+df_combo2 = subset(gpt3, test == "['combo 2', 'system_message_hum', 'user_message_baseline1', 'human']") ## simple 
+df_combo3 = subset(gpt3, test == "['combo 3', 'system_message_risk', 'user_message_baseline1', 'risk system']") ## simple 
+df_combo3B = subset(gpt3, test == "['combo 3B', 'system_message_risk', 'user_message_risk', 'hum + risk + risk']") ## simple 
+
+df_combo1A_r1 = subset(round1_AI, test == "['combo 1A', 'system_message_baseline1', 'user_message_baseline1', 'system role']") ## simple 
+df_combo2_r1 = subset(round1_AI, test == "['combo 2', 'system_message_hum', 'user_message_baseline1', 'human']") ## simple 
+df_combo3_r1 = subset(round1_AI, test == "['combo 3', 'system_message_risk', 'user_message_baseline1', 'risk system']") ## simple 
+df_combo3B_r1 = subset(round1_AI, test == "['combo 3B', 'system_message_risk', 'user_message_risk', 'hum + risk + risk']") ## simple 
+
+dim(df_combo3B_r1)
+table(df_combo2$frame)
+
+######################## H2.1 Risky Choice Framing Effect ######################## 
+##frame_gain A: gain = 1, loss = 0
+##option_selected_A: A (certain B (loss) =0 
+
+
+##### ALL RUNS #####
+#Basic Model
+logit_ai_basic <- glm(option_selected ~ frame, data = gpt3, family = "binomial")
+summary(logit_ai_basic) 
+#With scenario 
+logit_ai_scn <- glm(option_selected ~ frame + scenario, data = gpt3, family = "binomial")
+summary(logit_ai_scn) 
+#with all prompt / model variables 
+logit_ai_conall <- glm(option_selected ~ frame + scenario  + risk  + sys_role, data = gpt3, family = "binomial")
+summary(logit_ai_conall) 
+###Table regression All Runs 
+stargazer(logit_ai_basic, logit_ai_scn, logit_ai_conall,
+        type = "text",
+        out="H2.1_results_table.html")
+
+
+stargazer(logit_ai_basic, logit_ai_scn, logit_ai_conall,
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text',
+          out="results_table_or.html")
+
+
+#####  ROUND 1 ##### 
+logit_ai_basic_r1 <- glm(option_selected ~ frame , data = round1_AI, family = "binomial")
+summary(logit_ai_basic_r1) 
+#With scenario 
+logit_ai_scn_r1 <- glm(option_selected ~ frame + scenario, data = round1_AI, family = "binomial")
+summary(logit_ai_scn_r1) 
+#with all prompt / model variables 
+logit_ai_conall_r1 <- glm(option_selected ~ frame + scenario  + risk  + sys_role, data = round1_AI, family = "binomial")
+summary(logit_ai_conall_r1)
+###Table regression Round 1 
+stargazer(logit_ai_basic_r1, logit_ai_scn_r1, logit_ai_conall_r1,
+        type = "text",
+        out="H2.1_results_table_R1.html")
+
+stargazer(logit_ai_basic_r1, logit_ai_scn_r1, logit_ai_conall_r1,
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text',
+          out="results_table_R1_or.html")
+
+
+##(ROBUSTNESS CHECK) with all prompt / model variables +  random effects 
+logit_ai_conall_re <- glmer(option_selected_A ~ frame_gain + (1|test)  + scenario  + risk  + sys_role, data = gpt3, family = "binomial")
+summary(logit_ai_conall_re)
+
+
+
+######################## H2.2 Influence of AI prompt on framing effect ########################
+  # - Investigate the interaction between the type of AI prompt and frame (gain/loss) in influencing the AI's choices.
+  # - Include an interaction term between AI prompt and frame in a logistic regression with Option_selected as the dependent variable.
+
+##### ALL RUNS #####
+#risk + scenario
+logit_ai_risk <- glm(option_selected_A ~ frame_gain * risk + scenario , data = gpt3, family = "binomial")
+summary(logit_ai_risk)       
+#system + scenario 
+logit_ai_system <- glm(option_selected_A ~ frame_gain * sys_role + scenario , data = gpt3, family = "binomial")
+summary(logit_ai_system)
+#All 
+logit_ai_all <- glm(option_selected_A ~ frame_gain * risk + frame_gain * sys_role + scenario , data = gpt3, family = "binomial")
+summary(logit_ai_all)
+###Table regression All Runs 
+stargazer(logit_ai_risk, logit_ai_system, logit_ai_all,
+        type = "text",
+        dep.var.labels=c("Option Selected (A)"), 
+        out="H_table.html")
+        covariate.labels=c("Frame (Gain)", "Risk (Risk)", "Risk (Risk 2x)", "Sys Role (Human)",  "Scenario (Human)", "Scenario (Animal)",
+        "Frame (Gain): Risk (Risk)", "Frame (Gain): Risk (Risk 2x)", "Frame (Gain): Sys Role (Human)","Constant"))
+stargazer(logit_ai_risk, logit_ai_system, logit_ai_all,
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text',
+          out="results_table_R1_or.html")
+
+
+
+##### Round 1 #####
+#risk + scenario
+logit_ai_risk_r1 <- glm(option_selected_A ~ frame_gain * risk + scenario , data = round1_AI, family = "binomial")
+summary(logit_ai_risk_r1)       
+#system + scenario 
+logit_ai_system_r1 <- glm(option_selected_A ~ frame_gain * sys_role + scenario , data = round1_AI, family = "binomial")
+summary(logit_ai_system_r1)
+#All 
+logit_ai_all_r1 <- glm(option_selected_A ~ frame_gain * risk + frame_gain * sys_role + scenario , data = round1_AI, family = "binomial")
+summary(logit_ai_all_r1)
+###Table regression All Runs 
+stargazer(logit_ai_risk_r1, logit_ai_system_r1, logit_ai_all_r1,
+        type = "text",
+        out="_table_r1.html",
+        dep.var.labels=c("Option Selected (A)"), 
+        covariate.labels=c("Frame (Gain)", "Risk (Risk)", "Risk (Risk 2x)", "Sys Role (Human)",  "Scenario (Human)", "Scenario (Animal)",
+        "Frame (Gain): Risk (Risk)", "Frame (Gain): Risk (Risk 2x)", "Frame (Gain): Sys Role (Human)","Constant"))
+
+######################## Additional Analysis - Scenario ########################
+
+##Looking at Each Scenario 
+logit_for <- glm(option_selected ~ frame   , data = df_for, family = "binomial")
+logit_an <- glm(option_selected ~ frame   , data = df_an, family = "binomial")
+logit_hum <- glm(option_selected ~ frame   , data = df_hum, family = "binomial")
+
+logit_for_c <- glm(option_selected ~ frame + sys_role + risk  , data = df_for, family = "binomial")
+logit_an_c <- glm(option_selected ~ frame + sys_role + risk  , data = df_an, family = "binomial")
+logit_hum_c <- glm(option_selected ~ frame  + sys_role + risk , data = df_hum, family = "binomial")
+
+
+
+stargazer(logit_for_c, logit_an_c, logit_hum_c, 
+dep.var.labels=c("Option Selected (A)"), 
+type = "text", out="scenario_c_tab.html")
+
+######################## Framing Effect by Each Mini-Experiment ########################
+
+##All Runs
+logit_combo1A <- glm(option_selected ~ frame + scenario , data = df_combo1A, family = "binomial")
+summary(logit_combo1A) 
+logit_combo2 <- glm(option_selected ~ frame + scenario , data = df_combo2, family = "binomial")
+summary(logit_combo2) 
+logit_combo3 <- glm(option_selected ~ frame + scenario , data = df_combo3, family = "binomial")
+summary(logit_combo3) 
+logit_combo3B <- glm(option_selected ~ frame + scenario , data = df_combo3B, family = "binomial")
+summary(logit_combo3B) 
+stargazer(logit_combo1A, logit_combo2, logit_combo3, logit_combo3B,
+          type="text", 
+          out="combos.html",
+          dep.var.labels=c("Option Selected (A)"), 
+          title="Table D.X  Effect of Frame Option Selected by Sub-Experiment, All Runs",   
+         covariate.labels=c("Frame (Gain)", "Scenario (Human)", "Scenario (Animal)", "Constant" ) )
+
+stargazer(logit_combo1A, logit_combo2, logit_combo3, logit_combo3B,
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text',
+          out="combos_or.html",
+          dep.var.labels=c("Option Selected (A)"), 
+          title="Table D.X  Effect of Frame Option Selected by Sub-Experiment, All Runs (Odds Ratios)",   
+          covariate.labels=c("Frame (Gain)", "Scenario (Human)", "Scenario (Animal)", "Constant" ) )
+
+#Round 1 
+logit_combo1A_r1_reg <- glm(option_selected ~ frame + scenario , data = df_combo1A_r1, family = "binomial")
+summary(logit_combo1A_r1) 
+logit_combo2_r1_reg <- glm(option_selected ~ frame  + scenario , data = df_combo2_r1, family = "binomial")
+summary(logit_combo2_r1) 
+logit_combo3_r1_reg <- glm(option_selected ~ frame  + scenario , data = df_combo3_r1, family = "binomial")
+summary(logit_combo3_r1) 
+logit_combo3B_r1_reg <- glm(option_selected ~ frame  + scenario , data = df_combo3B_r1, family = "binomial")
+summary(logit_combo3B_r1_reg) 
+##Tables
+stargazer(logit_combo1A_r1_reg, logit_combo2_r1_reg, logit_combo3_r1_reg,
+          type="text", 
+          out="combos_r1.html", 
+          dep.var.labels=c("Option Selected (A)"), 
+          title="Table D.X  Effect of Frame Option Selected by Sub-Experiment, Round 1",   
+          covariate.labels=c("Frame (Gain)", "Scenario (Human)", "Scenario (Animal)", "Constant" ) )
+
+stargazer(logit_combo3B_r1_reg, 
+          type="text", 
+          out="combos2.html",
+          dep.var.labels=c("Option Selected (A)"), 
+          title="Table D.X  Effect of Frame Option Selected by Sub-Experiment, Round 1",   
+          covariate.labels=c("Frame (Gain)", "Scenario (Human)", "Scenario (Animal)", "Constant" ) )
+
+stargazer(logit_combo1A_r1_reg, logit_combo2_r1_reg, logit_combo3_r1_reg,
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text',
+          out="combos_r1_or.html",
+          dep.var.labels=c("Option Selected (A)"), 
+          title="Table D.X  Effect of Frame Option Selected by Sub-Experiment, Round 1 (Odds Ratios)",   
+          covariate.labels=c("Frame (Gain)", "Scenario (Human)", "Scenario (Animal)", "Constant" ) )
+
+stargazer(logit_combo3B_r1_reg,
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text',
+          out="combos2_or.html",
+          dep.var.labels=c("Option Selected (A)"), 
+          title="Table D.X  Effect of Frame Option Selected by Sub-Experiment, Round 1 (Odds Ratios)",   
+          covariate.labels=c("Frame (Gain)", "Scenario (Human)", "Scenario (Animal)", "Constant" ) )
+
+
+######################## Framing Effect by Each Mini-Experiment w/ Interaction ########################
+logit_combo1A_r1_reg <- glm(option_selected ~ frame * scenario , data = df_combo1A_r1, family = "binomial")
+summary(logit_combo1A_r1) 
+logit_combo2_r1_reg <- glm(option_selected ~ frame  * scenario , data = df_combo2_r1, family = "binomial")
+summary(logit_combo2_r1) 
+logit_combo3_r1_reg <- glm(option_selected ~ frame  * scenario , data = df_combo3_r1, family = "binomial")
+summary(logit_combo3_r1) 
+logit_combo3B_r1_reg <- glm(option_selected ~ frame  * scenario , data = df_combo3B_r1, family = "binomial")
+summary(logit_combo3B_r1_reg) 
+stargazer(logit_combo1A_r1_reg, logit_combo2_r1_reg, logit_combo3_r1_reg,
+          type="text", 
+          out="combos_r1.html")
+stargazer(logit_combo3B_r1_reg, 
+          type="text", 
+          out="combos2.html",
+          title="Table X - Framing  Effects on Risky Choices by Mini Experiment")
+
+
+          covariate.labels=c("Frame (Gain)", "Scenario (Human)", "Scenario (Animal)", "Constant" ) )
+
+stargazer(logit_ai_risk, logit_ai_system, logit_ai_all,
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text',
+          out="results_table_R1_or.html")
+
+
+######################## H2.4 Framing Effect by Rating Num ##################
+
+##gpt3$rating_num = factor(gpt3$rating_num, levels = c(1,2,3,4,5,6,7))
+##gpt3$rating_cat = factor(gpt3$rating_cat, levels = c('Strong Preference for Proposal A', 'Preference for Proposal A', 'Slight Preference for Proposal A', 'No Preference for Proposal A or B', 'Slight Preference for Propsal B', 'Preference for Proposal B', 'Strong Preference for Proposal B'))
+
+##rating scale reversed from the orginal which was: on a scale of 1 (Strong Preference for Proposal A) to 7 (Strong Preference for Proposal B) and converted to ---> 1 (Strong Preference for Proposal B) to 7(Strong Preference for Proposal A)
+
+ordinal_basic =clm(reversed_rating_num ~ frame ,data = gpt3)
+summary(ordinal_basic) 
+
+ordinal_scn =clm(reversed_rating_num ~ frame + scenario,data = gpt3)
+summary(ordinal_scn) 
+
+ordinal_all =clm(reversed_rating_num ~ frame + scenario + risk  + sys_role,data = gpt3)
+summary(ordinal_all) 
+
+stargazer(ordinal_basic, ordinal_scn, ordinal_all, 
+        type="text", 
+        dep.var.labels=c("Rating Scale^"),
+        out="ordinal_results.html"),
+         covariate.labels=c("Frame (Gain)",  "Scenario (Human)", "Scenario (Animal)", "Risk (Risk)", "Risk (Risk 2x)", "Sys Role (Human)")
+stargazer(ordinal_basic, ordinal_scn, ordinal_all, 
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text',
+          out="results_table_or.html")
+
+
+##For Each Combo
+ordinal_combo1A  =clm(reversed_rating_num ~ frame_gain + scenario,data = df_combo1A)
+summary(ordinal_combo1A) 
+ordinal_combo2  =clm(reversed_rating_num ~ frame_gain + scenario,data = df_combo2)
+summary(ordinal_combo1A) 
+ordinal_combo3  =clm(reversed_rating_num ~ frame_gain + scenario,data = df_combo3)
+summary(ordinal_combo3) 
+ordinal_combo3B  =clm(reversed_rating_num ~ frame_gain + scenario,data = df_combo3B)
+summary(ordinal_combo3B) 
+ordinal_combo5  =clm(reversed_rating_num ~ frame_gain + scenario,data = df_combo5)
+summary(ordinal_combo3B) 
+ordinal_combo5B  =clm(reversed_rating_num ~ frame_gain + scenario,data = df_combo5B)
+summary(ordinal_combo5B) 
+
+stargazer(ordinal_combo1A, ordinal_combo2, ordinal_combo3, ordinal_combo3B,
+        type="text", 
+        out="ordinal_results_by_combo.html")
+stargazer(ordinal_combo5, ordinal_combo5B,
+        type="text", 
+        out="ordinal_results_by_combo2.html"),
+
+
+
+
+######################## H2.5 Framing Effect by Rating Num & Prompt Conditions ##################
+
+ordinal_sys =clm(reversed_rating_num ~ frame_gain * sys_role + scenario ,data = gpt3)
+summary(ordinal_sys) 
+  #effect of frame_gain for the "neutral_system" group is -1.03584.
+  #effect of frame_gain for the "human" group is (frame_gain + interaction) -1.03584 + 0.79727 = -0.23857.
+  #frame_gain:sys_rolehuman: effect of being in the gain frame increases for the human prompt versus neutral;suggests that this preference changes more toward Option A in the gain frame compared to when the sys_role is "neutral_system".
+  
+ordinal_ins =clm(reversed_rating_num ~ frame_gain * scenario ,data = gpt3)
+summary(ordinal_ins) 
+ordinal_risk =clm(reversed_rating_num ~ frame_gain * risk + scenario ,data = gpt3)
+summary(ordinal_risk) 
+ordinal_all <- clm(reversed_rating_num ~ frame_gain * risk + frame_gain * sys_role + scenario, data = gpt3)
+summary(ordinal_all) 
+  #when moving from a loss frame (coded as 0) to a gain frame (coded as 1), there's a decrease in the preference for Proposal A
+  #when the risk is explicitly mentioned, there is an increased preference for Proposal A compared to when risk is not mentioned; Becomes even stronger if included in the system role and in the user message. 
+stargazer(ordinal_sys, ordinal_ins,ordinal_risk, ordinal_all, 
+        type = "text", 
+     out="ordinalpromptvars.html", 
+    covariate.labels=c("Frame (Gain)", "Sys Role (Human)",  "Instructions (Task Order)", "Risk (Risk)", "Risk (Risk 2x)", "Scenario (Human)", "Scenario (Animal)", 
+    "Frame (Gain) x Sys Role (Human)", "Frame (Gain) x Ins. (Task Order)", "Frame (Gain) x Risk (Risk)", "Frame (Gain) x Risk (Risk 2x)"))
+
+
+
+
+###############################################################################################################
+
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+################################### Cross Comparative Analysis ################################################
+# ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+
+###############################################################################################################
+
+
+
+## Load in Data
+combined <- "/Users/annaking/Documents/Github/riskychoiceframing_AI/Experiment 1/analysis/human_and_AI_combined.csv"
+df_combined <- read_csv(combined)
+dim(df_combined)
+#set cat order for source var
+df_combined$source = factor(df_combined$source, levels = c("human", "AI"))
+df_combined$source_2 = factor(df_combined$source, levels = c("AI", "human"))
+
+#set cat order for scenario var
+df_combined$scenario = factor(df_combined$scenario, levels = c("forest", "human", "animal"))
+
+#clean frame cat 
+df_combined$frame <- ifelse(df_combined$frame == "gain", "Gain", 
+                     ifelse(df_combined$frame == "loss", "Loss", df_combined$frame))
+df_combined$frame <- factor(df_combined$frame, levels = c("Loss", "Gain"))
+
+
+### Hypotheses Testing ###
+###### H3A: Preference for Option A in the gain frame with logistic regression
+    #coeff frame_gain: the change in humans' odds of choosing Option A when they move from the loss to the gain frame.
+    #coeff source_1: the difference between AI and humans in the loss frame (since loss is the reference).
+    #coeff source_1:frame_gain: whether the change in odds for AI (from loss to gain frame) is different from that of humans.
+    #a model to understand how the choice between Option A and Option B changes based on two main factors: frame (gain vs loss); participant type (human vs. AI)
+##Basic Model 
+logit_source_A <- glm(option_selected_A ~ frame_gain * source + scenario , data = df_combined, family = binomial())
+summary(logit_source_A)   
+coefs_A <- coef(logit_source_A)
+odds_ratio_AI_A <- exp(coefs_A["sourceAI"] + coefs_A["frame_gain:sourceAI"])
+print(odds_ratio_AI_A) 
+    #odds_ratio_AI_A: Represents the odds of AI choosing Option A over Option B in the gain frame (relative to the loss frame) compared to the same odds for humans
+odds_ratio_AI_Hum <- exp(coefs_A["frame_gain:sourceAI"])
+print(odds_ratio_AI_Hum) 
+     #odds_ratio_AI_A: Represents how the odds of AI choosing Option A over Option B when transitioning from the loss frame to the gain frame differ from the odds of humans making the same transition.
+
+stargazer(logit_combo1A, logit_combo2, logit_combo3, logit_combo3B,
+          type="text", 
+          out="combos.html",
+          dep.var.labels=c("Option Selected (A)"), 
+          title="Table D.X  Effect of Frame Option Selected by Sub-Experiment, All Runs",   
+         covariate.labels=c("Frame (Gain)", "Scenario (Human)", "Scenario (Animal)", "Constant" ) )
+
+stargazer(logit_combo1A, logit_combo2, logit_combo3, logit_combo3B,
+          apply.coef = exp,
+          apply.se   = exp,
+          type = 'text',
+          out="combos_or.html",
+          dep.var.labels=c("Option Selected (A)"), 
+          title="Table D.X  Effect of Frame Option Selected by Sub-Experiment, All Runs (Odds Ratios)",   
+          covariate.labels=c("Frame (Gain)", "Scenario (Human)", "Scenario (Animal)", "Constant" ) )
+
+
+######### Investigate Gain versus Loss Condition
+
+###Split by gain and loss
+##I believe i need to boostrap the human as the power is too low?????? 
+df_gain = subset(df_combined, frame_gain == 1)
+df_gain$source_1 <- factor(df_gain$source, levels = c("human", "AI"))
+df_gain$source_2 <- factor(df_gain$source, levels = c("AI", "human"))
+
+df_loss = subset(df_combined, frame_loss == 0)
+df_loss$source_1 <- factor(df_loss$source, levels = c("human", "AI"))
+df_loss$source_2 <- factor(df_loss$source, levels = c("AI", "human"))
+
+logit_gain_A_AI <- glm(option_selected_A ~ source_1, data = df_gain, family = binomial())
+logit_gain_A_hum <- glm(option_selected_A ~ source_2, data = df_gain, family = binomial())
+summary(logit_gain_B_AI)
+summary(logit_gain_B_hum)
+
+logit_loss_B_AI <- glm(option_selected_B ~ source_1, data = df_loss, family = binomial())
+logit_loss_B_hum <- glm(option_selected_B ~ source_2, data = df_loss, family = binomial())
+summary(logit_loss_B_AI)
+summary(logit_loss_B_hum)
+
+####### Create Tables
+
+############### ################ ############### ################
+get_model_values <- function(model) {
+  coef_sum <- coef(summary(model))
+  results <- c()
+  for (name in rownames(coef_sum)) {
+    est <- coef_sum[name, 1]
+    se <- coef_sum[name, 2]
+    pvalue <- coef_sum[name, 4]
+    significance <- if (pvalue < 0.05) "*" else ""
+    results[name] <- paste0(round(est, 3), " (", round(se, 3), ") ", significance)
+  }
+  results["Observations"] <- length(model$fitted.values)
+  results["Pseudo R^2"] <- round(1 - model$deviance / model$null.deviance, 3)
+  return(results)
+}
+results_A <- get_model_values(logit_sourcehum_A)
+results_B2 <- get_model_values(logit_sourcehum_B2)
+results_B <- get_model_values(logit_sourcehum_B)
+results_A2 <- get_model_values(logit_sourcehum_A2)
+
+table <- data.frame(
+  `Model A` = results_A,
+  `Model B2` = results_B2,
+  `Model B` = results_B,
+  `Model A2` = results_A2
+)
+print(table, row.names=TRUE)
+write_xlsx(table, "modelcompare_cross.xlsx")
+
+
+ ############### ################ ############### ################
+
+###### H4B: Influence of AI prompt on similarity
+# - Investigate the interaction between the type of AI prompt and frame (gain/loss) in influencing the AI's choices.
+# - Include an interaction term between AI prompt and frame in a logistic regression with Option_selected as the dependent variable.
+
+
+
+
+
+
+
+############ ARCHIVE - CROSS COMAPRE ############
+
+
+
+#define bootstrap function
+bootstrap_coefs_AI <- function(data, cell_sizes, n_iterations) {
+  coefs <- matrix(NA, ncol = 4, nrow = n_iterations) 
+  colnames(coefs) <- c("(Intercept)", "scenariohuman", "scenarioanimal", "frameGain")
+  for(i in 1:n_iterations) {
+    sample_data <- do.call(rbind, 
+                           lapply(names(cell_sizes), function(cell) {
+                             cell_data <- data[data$scenario == unlist(strsplit(cell, split=", "))[1] & 
+                                               data$frame == unlist(strsplit(cell, split=", "))[2], ]
+                             sampled_data <- cell_data[sample(nrow(cell_data), cell_sizes[[cell]], replace = TRUE), ]
+                             sampled_data
+                           }))
+    model <- glm(option_selected ~ frame + scenario, family = binomial(), data = sample_data)  
+    current_coefs <- coef(model)
+    coefs[i, names(current_coefs)] <- current_coefs
+  }
+  return(coefs)
+}
+
+##check CIs
+within_interval <- sapply(1:length(observed_coefs), function(i) {
+  lower_bound <- coef_summary$CI_low[i]
+  upper_bound <- coef_summary$CI_high[i]
+  observed_coef <- observed_coefs[i]
+  return(observed_coef >= lower_bound & observed_coef <= upper_bound)
+})
+
+
+cell_sizes <- list(`animal, Gain` = 34, 
+                   `animal, Loss` = 37, 
+                   `forest, Gain` = 35, 
+                   `forest, Loss` = 28, 
+                   `human, Gain` = 30, 
+                   `human, Loss` = 37)
+
+##### ALL Tests
+df = round1_AI
+df$scenario <- as.factor(df$scenario)
+df$frame <- factor(df$frame, levels = c("Loss", "Gain"))
+df$option_selected <- as.numeric(df$option_selected == 'Proposal A') 
+
+df_log = glm(option_selected ~ frame + scenario, family = binomial(), data = df)
+summary(df_log)
+observed_coefs <- coef(model)
+
+set.seed(1000)
+bootstrap_results <- bootstrap_coefs_AI(df, cell_sizes, 1000)
+bootstrap_means <- colMeans(bootstrap_results, na.rm = TRUE)
+
+#bootstrap
+coefs_list <- list(
+  Bootstrap = bootstrap_means,
+  df_log = coef(df_log)
+)
+coef_summary <- data.frame(
+   Coefficient = colnames(bootstrap_results),
+   Mean = apply(bootstrap_results, 2, mean),
+   SE = apply(bootstrap_results, 2, sd),
+   CI_low = apply(bootstrap_results, 2, function(x) quantile(x, 0.025)),
+   CI_high = apply(bootstrap_results, 2, function(x) quantile(x, 0.975))
+ )
+print(coef_summary)
+write.csv(table, "confidenceint.csv")
+
+
+
+################## BY COMBO ###########################
+
+##Combo1A
+df_r1 = df_combo1A_r1
+df = df_combo1A
+
+df$scenario <- as.factor(df$scenario)
+df$frame <- factor(df$frame, levels = c("Loss", "Gain"))
+df$option_selected <- as.numeric(df$option_selected == 'Proposal A') 
+
+df_r1$scenario <- as.factor(df_r1$scenario)
+df_r1$frame <- factor(df_r1$frame, levels = c("Loss", "Gain"))
+df_r1$option_selected <- as.numeric(df_r1$option_selected == 'Proposal A') 
+
+#run models 
+df_r1_out = glm(option_selected ~ frame + scenario, family = binomial(), data = df_r1)
+summary(df_r1_out)
+
+set.seed(1000)
+bootstrap_results <- bootstrap_coefs_AI(df, cell_sizes, 1000)
+bootstrap_means <- colMeans(bootstrap_results, na.rm = TRUE)
+
+coefs_list <- list(
+  Bootstrap = bootstrap_means,
+  df_r1 = coef(df_r1_out)
+)
+print(coefs_list)
+
+coef_summary <- data.frame(
+   Coefficient = colnames(bootstrap_results),
+   Mean = apply(bootstrap_results, 2, mean),
+   SE = apply(bootstrap_results, 2, sd),
+   CI_low = apply(bootstrap_results, 2, function(x) quantile(x, 0.025)),
+   CI_high = apply(bootstrap_results, 2, function(x) quantile(x, 0.975))
+ )
+print(coef_summary)
+
+
+
+##Combo2
+df = df_combo2
+df_1 = df_combo2_r1
+
+df$scenario <- as.factor(df$scenario)
+df$frame <- factor(df$frame, levels = c("Loss", "Gain"))
+df$option_selected <- as.numeric(df_1$option_selected == 'Proposal A') 
+df_1$scenario <- as.factor(df_1$scenario)
+df_1$frame <- factor(df_1$frame, levels = c("Loss", "Gain"))
+df_1$option_selected <- as.numeric(df_1$option_selected == 'Proposal A') 
+
+#run models 
+df_r1 = glm(option_selected ~ frame + scenario, family = binomial(), data = df_1)
+summary(df_r1)
+
+set.seed(1000)
+bootstrap_results <- bootstrap_coefs_AI(df, cell_sizes, 1000)
+bootstrap_means <- colMeans(bootstrap_results, na.rm = TRUE)
+
+coefs_list <- list(
+  Bootstrap = bootstrap_means,
+  df_all = coef(df_all),
+  df_r1 = coef(df_r1)
+)
+
+coef_summary <- data.frame(
+   Coefficient = colnames(bootstrap_results),
+   Mean = apply(bootstrap_results, 2, mean),
+   SE = apply(bootstrap_results, 2, sd),
+   CI_low = apply(bootstrap_results, 2, function(x) quantile(x, 0.025)),
+   CI_high = apply(bootstrap_results, 2, function(x) quantile(x, 0.975))
+ )
+print(coef_summary)
+
+
+############ Cross CHECK ############
+
+##clean variables 
+main_analysis$scenario = main_analysis$scenario_clean
+main_analysis$scenario <- as.factor(main_analysis$scenario)
+
+
+main_analysis$source = 'human'
+main_analysis$source <- as.factor(main_analysis$source)
+main_analysis$scenario <- ifelse(main_analysis$scenario == "animals", "animal", 
+                     ifelse(main_analysis$scenario == "humans", "human",
+                     ifelse(main_analysis$scenario == "forest", "forest",main_analysis$scenario)))                  
+gpt3$source = 'AI'
+round1_AI$source = 'AI'
+
+gpt3$source <- as.factor(gpt3$source)
+round1_AI$source <- as.factor(round1_AI$source)
+
+common_cols <- intersect(names(main_analysis), names(gpt3))
+common_cols
+main_analysis <- main_analysis[, common_cols]
+gpt3 <- gpt3[, common_cols]
+
+
+common_cols <- intersect(names(main_analysis), names(round1_AI))
+common_cols
+main_analysis <- main_analysis[, common_cols]
+round1_AI <- round1_AI[, common_cols]
+
+
+#bootstrap function
+bootstrap_coefs <- function(human_data, ai_data, cell_sizes, n_iterations) {
+    if (!"option_selected_A" %in% names(human_data) | 
+      !"option_selected_A" %in% names(ai_data)) {
+    stop("One or both datasets don't have the column option_selected_A")
+  }
+  coefs <- matrix(NA, ncol = length(names(coef(glm(option_selected_A ~ frame * source + scenario, family = binomial(), data = rbind(human_data, ai_data))))), nrow = n_iterations)
+  colnames(coefs) <- names(coef(glm(option_selected_A ~ frame * source + scenario, family = binomial(), data = rbind(human_data, ai_data))))
+  print(colnames(coefs))
+  for(i in 1:n_iterations) {
+    sample_data <- do.call(rbind, 
+                           lapply(names(cell_sizes), function(cell) {   
+                             human_sample <- human_data[human_data$scenario == unlist(strsplit(cell, split=", "))[1] & 
+                                                        human_data$frame == unlist(strsplit(cell, split=", "))[2], ]
+                             ai_cell_data <- ai_data[ai_data$scenario == unlist(strsplit(cell, split=", "))[1] & 
+                                                     ai_data$frame == unlist(strsplit(cell, split=", "))[2], ]
+                             ai_sample <- ai_cell_data[sample(nrow(ai_cell_data), cell_sizes[[cell]], replace = TRUE), ]                             
+                             if(ncol(human_sample) != ncol(ai_sample) || !all(names(human_sample) == names(ai_sample))) {
+                               cat("Columns mismatch in scenario:", unlist(strsplit(cell, split=", "))[1], "and frame:", unlist(strsplit(cell, split=", "))[2], "\n")
+                               cat("Columns in human_sample:", names(human_sample), "\n")
+                               cat("Columns in ai_sample:", names(ai_sample), "\n")
+                             }                             
+                             rbind(human_sample, ai_sample)
+                           }))
+    
+    sample_data$source = factor(sample_data$source, levels = c("human", "AI"))
+    model <- glm(option_selected_A ~ frame * source + scenario, family = binomial(), data = sample_data)
+    current_coefs <- coef(model)
+    coefs[i, names(current_coefs)] <- current_coefs
+  }
+  return(coefs )
+}
+
+
+##check CIs
+within_interval <- sapply(1:length(observed_coefs), function(i) {
+  lower_bound <- coef_summary$CI_low[i]
+  upper_bound <- coef_summary$CI_high[i]
+  observed_coef <- observed_coefs[i]
+  return(observed_coef >= lower_bound & observed_coef <= upper_bound)
+})
+
+
+set.seed(10000)
+#main_analysis$frame <- factor(main_analysis$frame, levels = c("Loss", "Gain"))
+bootstrap_coefs_comb <- bootstrap_coefs(main_analysis, gpt3, cell_sizes, 10000)
+bootstrap_means <- colMeans(bootstrap_coefs, na.rm = TRUE)
+
+# Observed coefficients from the original data of all combined AI runs (5x greater per cell than exp1)
+model <- glm(option_selected_A ~ frame * source + scenario , family = binomial(), data = df_combined)
+summary(model)
+observed_coefs <- coef(model)
+
+##using only round1 of the AI so that the two samples of exp 1 and exp 2 are = 
+combr1 = rbind(main_analysis, round1_AI)
+model2 <- glm(option_selected_A ~ frame * source + scenario , family = binomial(), data = combr1)
+summary(model2)
+observed_coefs_r1 <- coef(model2)
+
+#s#targazer(model,model2, type = 'text')
+
+##bootstrap
+coef_summary <- data.frame(
+    Coefficient = colnames(bootstrap_coefs_comb),
+    Mean = apply(bootstrap_coefs_comb, 2, mean),
+    SE = apply(bootstrap_coefs_comb, 2, sd),
+    CI_low = apply(bootstrap_coefs_comb, 2, function(x) quantile(x, 0.025)),
+    CI_high = apply(bootstrap_coefs_comb, 2, function(x) quantile(x, 0.975))
+)
+print(coef_summary)
+
+result_table = data.frame(
+   within_interval,
+   coef_summary,
+    observed_coefs,
+   observed_coefs_r1)
+
+print(result_table)
+
+write.csv(result_table, "confidenceint_all.csv")
+
+# Visualize coef_summarybootstrap coefficients
+coefs_melted <- as.data.frame(bootstrap_results)
+coefs_melted$Iteration <- 1:nrow(coefs_melted)
+
+ggplot(coefs_melted, aes(x = `(Intercept)`, fill = source)) + 
+  geom_histogram(binwidth = 0.1) +
+  labs(title = "Distribution of Bootstrap Coefficients", x = "Coefficient Value", y = "Frequency")
